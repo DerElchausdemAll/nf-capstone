@@ -7,6 +7,7 @@ const Header = () => {
 			<nav data-test-id="navigation">
 				<Link href="/">Home</Link>
 				<Link href="/about">About me</Link>
+				<Link href="/profile">Profile</Link>
 			</nav>
 		</header>
 	);
