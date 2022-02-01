@@ -10,7 +10,7 @@ const Page = () => {
 				<title key="title">About</title>
 				<meta key="description" name="description" content="About" />
 			</Head>
-			<Notes></Notes>
+			<Notes />
 		</Layout>
 	);
 };

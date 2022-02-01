@@ -58,19 +58,21 @@ const Items = () => {
 						Add an Item
 					</Typography>
 					<TextField
+						color="secondary"
 						sx={{
 							marginTop: 5,
 							display: "block",
 						}}
 						label="Title"
 						variant="outlined"
-						color="secondary"
 						fullWidth
 						required
 						error={titleError}
 						onChange={e => setTitle(e.target.value)}
 					/>
 					<TextField
+						color="secondary"
+						rows={6}
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
@@ -78,15 +80,14 @@ const Items = () => {
 						}}
 						label="Description"
 						variant="outlined"
-						color="secondary"
 						multiline
-						rows={4}
 						fullWidth
 						required
 						error={detailsError}
 						onChange={e => setDetails(e.target.value)}
 					/>
 					<TextField
+						color="secondary"
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
@@ -94,7 +95,6 @@ const Items = () => {
 						}}
 						label="Image URL"
 						variant="outlined"
-						color="secondary"
 						fullWidth
 						required
 						error={imageError}
@@ -112,10 +112,6 @@ const Items = () => {
 						Submit
 					</Button>
 				</form>
-				<br></br>
-				<br></br>
-				<br></br>
-				<br></br>
 			</Container>
 		</Layout>
 	);
