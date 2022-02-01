@@ -58,19 +58,20 @@ const Items = () => {
 						Add an Item
 					</Typography>
 					<TextField
+						variant="outlined"
 						color="secondary"
 						sx={{
 							marginTop: 5,
 							display: "block",
 						}}
 						label="Title"
-						variant="outlined"
 						fullWidth
 						required
 						error={titleError}
 						onChange={e => setTitle(e.target.value)}
 					/>
 					<TextField
+						variant="outlined"
 						color="secondary"
 						rows={6}
 						sx={{
@@ -79,7 +80,6 @@ const Items = () => {
 							display: "block",
 						}}
 						label="Description"
-						variant="outlined"
 						multiline
 						fullWidth
 						required
@@ -87,6 +87,7 @@ const Items = () => {
 						onChange={e => setDetails(e.target.value)}
 					/>
 					<TextField
+						variant="outlined"
 						color="secondary"
 						sx={{
 							marginTop: 5,
@@ -94,7 +95,6 @@ const Items = () => {
 							display: "block",
 						}}
 						label="Image URL"
-						variant="outlined"
 						fullWidth
 						required
 						error={imageError}
