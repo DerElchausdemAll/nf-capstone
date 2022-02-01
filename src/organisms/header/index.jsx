@@ -14,9 +14,9 @@ const Header = () => {
 				}}
 			>
 				<Link href="/">Home</Link>
-				<Link href="/about">About me</Link>
-				<Link href="/profile">Profile</Link>
 				<Link href="/items">Items</Link>
+				<Link href="/profile">Profile</Link>
+				<Link href="/form">Form</Link>
 			</nav>
 		</header>
 	);
