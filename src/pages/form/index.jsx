@@ -58,7 +58,6 @@ const Items = () => {
 						Add an Item
 					</Typography>
 					<TextField
-						onChange={e => setTitle(e.target.value)}
 						sx={{
 							marginTop: 5,
 							display: "block",
@@ -69,9 +68,9 @@ const Items = () => {
 						fullWidth
 						required
 						error={titleError}
-					></TextField>
+						onChange={e => setTitle(e.target.value)}
+					/>
 					<TextField
-						onChange={e => setDetails(e.target.value)}
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
@@ -85,9 +84,9 @@ const Items = () => {
 						fullWidth
 						required
 						error={detailsError}
-					></TextField>
+						onChange={e => setDetails(e.target.value)}
+					/>
 					<TextField
-						onChange={e => setImage(e.target.value)}
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
@@ -99,7 +98,8 @@ const Items = () => {
 						fullWidth
 						required
 						error={imageError}
-					></TextField>
+						onChange={e => setImage(e.target.value)}
+					/>
 					<RadioGroup value={category} onChange={e => setCategory(e.target.value)}>
 						<FormControlLabel value="playmobil" control={<Radio />} label="Playmobil" />
 						<FormControlLabel value="wood" control={<Radio />} label="Wooden Toys" />
