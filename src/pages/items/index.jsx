@@ -13,8 +13,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 const Items = () => {
 	const [title, setTitle] = useState("");
 	const [details, setDetails] = useState("");
+	const [image, setImage] = useState("");
 	const [titleError, setTitleError] = useState(false);
 	const [detailsError, setDetailsError] = useState(false);
+	const [imageError, setImageError] = useState(false);
 
 	const [category, setCategory] = useState();
 
@@ -22,6 +24,7 @@ const Items = () => {
 		e.preventDefault();
 		setTitleError(false);
 		setDetailsError(false);
+		setImageError(false);
 
 		if (title === "") {
 			setTitleError(true);
@@ -31,11 +34,15 @@ const Items = () => {
 			setDetailsError(true);
 		}
 
-		if (title && details) {
+		if (image === "") {
+			setImageError(true);
+		}
+
+		if (title && details && image) {
 			fetch("http://localhost:8000/notes", {
 				method: "POST",
 				headers: { "Content-type": "application/json" },
-				body: JSON.stringify({ title, details, category }),
+				body: JSON.stringify({ title, details, image, category }),
 			});
 		}
 	};
@@ -80,6 +87,20 @@ const Items = () => {
 						required
 						error={detailsError}
 					></TextField>
+					<TextField
+						onChange={e => setImage(e.target.value)}
+						sx={{
+							marginTop: 5,
+							marginBottom: 5,
+							display: "block",
+						}}
+						label="Image"
+						variant="outlined"
+						color="secondary"
+						fullWidth
+						required
+						error={imageError}
+					></TextField>
 					<RadioGroup value={category} onChange={e => setCategory(e.target.value)}>
 						<FormControlLabel value="playmobil" control={<Radio />} label="Playmobil" />
 						<FormControlLabel value="wood" control={<Radio />} label="Wooden Toys" />
@@ -88,7 +109,6 @@ const Items = () => {
 						<FormControlLabel value="outdoor" control={<Radio />} label="Outdoor" />
 						<FormControlLabel value="others" control={<Radio />} label="Others" />
 					</RadioGroup>
-
 					<Button type="submit" color="secondary" variant="contained">
 						Submit
 					</Button>

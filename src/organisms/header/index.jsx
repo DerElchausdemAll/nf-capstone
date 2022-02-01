@@ -6,7 +6,12 @@ const Header = () => {
 		<header>
 			<nav
 				data-test-id="navigation"
-				style={{ display: "flex", justifyContent: "space-evenly", marginBottom: "20px" }}
+				style={{
+					display: "flex",
+					justifyContent: "space-evenly",
+					marginBottom: "20px",
+					marginTop: "20px",
+				}}
 			>
 				<Link href="/">Home</Link>
 				<Link href="/about">About me</Link>
