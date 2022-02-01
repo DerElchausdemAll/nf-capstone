@@ -60,11 +60,11 @@ const Items = () => {
 					<TextField
 						variant="outlined"
 						color="secondary"
+						label="Title"
 						sx={{
 							marginTop: 5,
 							display: "block",
 						}}
-						label="Title"
 						fullWidth
 						required
 						error={titleError}
@@ -73,13 +73,13 @@ const Items = () => {
 					<TextField
 						variant="outlined"
 						color="secondary"
+						label="Description"
 						rows={6}
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
 							display: "block",
 						}}
-						label="Description"
 						multiline
 						fullWidth
 						required
@@ -89,12 +89,12 @@ const Items = () => {
 					<TextField
 						variant="outlined"
 						color="secondary"
+						label="Image URL"
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
 							display: "block",
 						}}
-						label="Image URL"
 						fullWidth
 						required
 						error={imageError}
