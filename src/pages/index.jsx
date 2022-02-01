@@ -4,6 +4,12 @@ import Button from "../atoms/button";
 import useGet from "../ions/hooks/fetch/get";
 import Layout from "../organisms/layout";
 
+// fontsource/roboto
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
 const Page = () => {
 	const { data, loading, error } = useGet("/api/hello");
 
