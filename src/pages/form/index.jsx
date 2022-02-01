@@ -58,6 +58,8 @@ const Items = () => {
 						Add an Item
 					</Typography>
 					<TextField
+						fullWidth
+						required
 						sx={{
 							marginTop: 5,
 							display: "block",
@@ -65,12 +67,13 @@ const Items = () => {
 						variant="outlined"
 						color="secondary"
 						label="Title"
-						fullWidth
-						required
 						error={titleError}
 						onChange={e => setTitle(e.target.value)}
 					/>
 					<TextField
+						multiline
+						fullWidth
+						required
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
@@ -80,13 +83,12 @@ const Items = () => {
 						color="secondary"
 						label="Description"
 						rows={6}
-						multiline
-						fullWidth
-						required
 						error={detailsError}
 						onChange={e => setDetails(e.target.value)}
 					/>
 					<TextField
+						fullWidth
+						required
 						sx={{
 							marginTop: 5,
 							marginBottom: 5,
@@ -95,8 +97,6 @@ const Items = () => {
 						variant="outlined"
 						color="secondary"
 						label="Image URL"
-						fullWidth
-						required
 						error={imageError}
 						onChange={e => setImage(e.target.value)}
 					/>
