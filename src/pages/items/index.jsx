@@ -94,7 +94,7 @@ const Items = () => {
 							marginBottom: 5,
 							display: "block",
 						}}
-						label="Image"
+						label="Image URL"
 						variant="outlined"
 						color="secondary"
 						fullWidth
