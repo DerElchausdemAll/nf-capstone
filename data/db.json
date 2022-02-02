@@ -34,6 +34,20 @@
       "image": "https://images.unsplash.com/photo-1529313779164-31ef6a34524f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       "category": "cars",
       "id": 5
+    },
+    {
+      "title": "dsdsadsad",
+      "details": "sad",
+      "image": "https://images.unsplash.com/photo-1643785689743-79ce647c0cea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1375&q=80",
+      "category": "wood",
+      "id": 6
+    },
+    {
+      "title": "hhasdasd",
+      "details": "saderweewwerwe",
+      "image": "https://images.unsplash.com/photo-1643785689743-79ce647c0cea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1375&q=80",
+      "category": "lego",
+      "id": 7
     }
   ]
 }

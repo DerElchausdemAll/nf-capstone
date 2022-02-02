@@ -55,7 +55,7 @@ const NotesCard = ({ note }) => {
 				<Collapse in={expanded} timeout="auto" unmountOnExit>
 					<CardContent>
 						<Typography variant="body1">Description:</Typography>
-						<br></br>
+						<br />
 						<Typography variant="body2" color="primary">
 							{note.details}
 						</Typography>

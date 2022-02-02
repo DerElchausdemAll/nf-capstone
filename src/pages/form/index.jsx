@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { useRouter } from "next/router";
 
 const Items = () => {
 	const [title, setTitle] = useState("");
@@ -18,6 +19,8 @@ const Items = () => {
 	const [imageError, setImageError] = useState(false);
 
 	const [category, setCategory] = useState();
+
+	const router = useRouter();
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -44,6 +47,7 @@ const Items = () => {
 				body: JSON.stringify({ title, details, image, category }),
 			});
 		}
+		router.push("/items");
 	};
 
 	return (
