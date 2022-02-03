@@ -13,10 +13,12 @@ import { useRouter } from "next/router";
 const Items = () => {
 	const [title, setTitle] = useState("");
 	const [details, setDetails] = useState("");
+	const [postalCode, setPostalCode] = useState("");
 	const [image, setImage] = useState("");
 	const [titleError, setTitleError] = useState(false);
 	const [detailsError, setDetailsError] = useState(false);
 	const [imageError, setImageError] = useState(false);
+	const [postalCodeError, setPostalCodeError] = useState(false);
 
 	const [category, setCategory] = useState();
 
@@ -27,6 +29,7 @@ const Items = () => {
 		setTitleError(false);
 		setDetailsError(false);
 		setImageError(false);
+		setPostalCodeError(false);
 
 		if (title === "") {
 			setTitleError(true);
@@ -34,6 +37,10 @@ const Items = () => {
 
 		if (details === "") {
 			setDetailsError(true);
+		}
+
+		if (postalCode === "") {
+			setPostalCodeError(true);
 		}
 
 		if (image === "") {
@@ -44,7 +51,14 @@ const Items = () => {
 			fetch("http://localhost:8000/notes", {
 				method: "POST",
 				headers: { "Content-type": "application/json" },
-				body: JSON.stringify({ title, details, image, category }),
+				body: JSON.stringify({
+					title,
+					details,
+					postalCode,
+					image,
+					category,
+					checked: false,
+				}),
 			});
 		}
 		router.push("/items");
@@ -53,8 +67,8 @@ const Items = () => {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">About</title>
-				<meta key="description" name="description" content="About" />
+				<title key="title">Form</title>
+				<meta key="description" name="description" content="Form" />
 			</Head>
 			<Container>
 				<form noValidate autoComplete="off" onSubmit={handleSubmit}>
@@ -89,6 +103,20 @@ const Items = () => {
 						rows={6}
 						error={detailsError}
 						onChange={e => setDetails(e.target.value)}
+					/>
+					<TextField
+						fullWidth
+						// required
+						sx={{
+							marginTop: 5,
+							marginBottom: 5,
+							display: "block",
+						}}
+						variant="outlined"
+						color="secondary"
+						label="Postal Code"
+						error={postalCodeError}
+						onChange={e => setPostalCode(e.target.value)}
 					/>
 					<TextField
 						fullWidth
