@@ -7,9 +7,10 @@ const Page = () => {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">About</title>
-				<meta key="description" name="description" content="About" />
+				<title key="title">Items</title>
+				<meta key="description" name="description" content="Items" />
 			</Head>
+
 			<Notes />
 		</Layout>
 	);
