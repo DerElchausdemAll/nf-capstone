@@ -11,6 +11,7 @@ import Collapse from "@mui/material/Collapse";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
+import useStore from "../../ions/hooks/storeFormData";
 
 const ExpandMore = styled(props => {
 	const { expand, ...other } = props;
@@ -25,19 +26,13 @@ const ExpandMore = styled(props => {
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-const NotesCard = ({ note }) => {
+const ItemsCard = ({ item }) => {
 	const [expanded, setExpanded] = React.useState(false);
-	const [checked, setChecked] = useState(note.checked);
+	const updateData = useStore(state => state.updateData);
+	const fetchData = useStore(state => state.fetchData);
 
 	const handleChange = () => {
-		const nextChecked = !checked;
-		setChecked(nextChecked);
-
-		fetch(`http://localhost:8000/notes/${note.id}`, {
-			method: "PUT",
-			headers: { "Content-type": "application/json" },
-			body: JSON.stringify({ ...note, checked: nextChecked }),
-		});
+		updateData(item.id, item);
 	};
 
 	const handleExpandClick = () => {
@@ -50,7 +45,7 @@ const NotesCard = ({ note }) => {
 				<CardHeader
 					action={
 						<Checkbox
-							checked={checked}
+							checked={item.checked}
 							color="secondary"
 							onChange={handleChange}
 							inputProps={{ "aria-label": "controlled" }}
@@ -59,10 +54,10 @@ const NotesCard = ({ note }) => {
 							checkedIcon={<Favorite />}
 						/>
 					}
-					title={note.title}
-					subheader={note.category}
+					title={item.title}
+					subheader={item.category}
 				/>
-				<CardMedia component="img" height="194" image={note.image} alt={note.title} />
+				<CardMedia component="img" height="194" image={item.image} alt={item.title} />
 
 				<CardActions disableSpacing>
 					<ExpandMore
@@ -79,7 +74,7 @@ const NotesCard = ({ note }) => {
 						<Typography variant="body1">Description:</Typography>
 						<br />
 						<Typography variant="body2" color="primary">
-							{note.details}
+							{item.details}
 						</Typography>
 					</CardContent>
 				</Collapse>
@@ -88,4 +83,10 @@ const NotesCard = ({ note }) => {
 	);
 };
 
-export default NotesCard;
+export default ItemsCard;
+
+// fetch(`http://localhost:8000/items/${item.id}`, {
+// 	method: "PUT",
+// 	headers: { "Content-type": "application/json" },
+// 	body: JSON.stringify({ ...item, checked: nextChecked }),
+// });
