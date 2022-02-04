@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../../organisms/layout";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -12,9 +12,9 @@ import { useRouter } from "next/router";
 import useStore from "../../ions/hooks/storeFormData";
 
 const Items = () => {
-	const itemCards = useStore(state => state.itemCards);
+	// const itemCards = useStore(state => state.itemCards);
 	const setItemCards = useStore(state => state.setItemCards);
-	const fetchData = useStore(state => state.fetchData);
+	// const fetchData = useStore(state => state.fetchData);
 
 	const [title, setTitle] = useState("");
 	const [details, setDetails] = useState("");
@@ -149,8 +149,8 @@ const Items = () => {
 					/>
 					<RadioGroup
 						value={category}
-						onChange={e => setCategory(e.target.value)}
 						name="category"
+						onChange={e => setCategory(e.target.value)}
 					>
 						<FormControlLabel value="playmobil" control={<Radio />} label="Playmobil" />
 						<FormControlLabel value="wood" control={<Radio />} label="Wooden Toys" />
