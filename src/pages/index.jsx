@@ -17,11 +17,19 @@ const Page = () => {
 				<title key="title">My Project</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<h1>Home</h1>
-			<div style={{ display: "flex", justifyContent: "center" }}>
-				<Button variant="outlined">
-					<Link href="/form">Add a Item</Link>
-				</Button>
+			<div>
+				<h1 style={{ display: "flex", justifyContent: "center" }}>Spielzeug-Verleih-App</h1>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<div style={{ display: "flex", justifyContent: "center" }}>
+					<Button variant="contained" href="/form">
+						Add a Item
+					</Button>
+				</div>
 			</div>
 		</Layout>
 	);

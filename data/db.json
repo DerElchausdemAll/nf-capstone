@@ -1,49 +1,40 @@
 {
   "items": [
     {
-      "title": "sadasd",
-      "details": "sadasd",
-      "postalCode": "32133",
-      "image": "https://images.unsplash.com/photo-1559038465-e0ca2910a5b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      "category": "cars",
-      "checked": true,
-      "id": 6
-    },
-    {
-      "title": "sadasdasd",
-      "details": "wadwqda",
-      "postalCode": "2323",
-      "image": "https://images.unsplash.com/photo-1579772991680-1194ef83d407?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      "category": "outdoor",
-      "checked": true,
-      "id": 7
-    },
-    {
-      "title": "Hello",
-      "details": "Ein weiterer Test",
-      "postalCode": "3434",
-      "image": "https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-      "category": "outdoor",
-      "checked": false,
-      "id": 8
-    },
-    {
-      "title": "Star wars",
-      "details": "sadasd",
-      "postalCode": "23321",
-      "image": "https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-      "category": "lego",
-      "checked": false,
-      "id": 9
-    },
-    {
       "title": "star wars",
       "details": "sdasdasd",
       "postalCode": "32132",
       "image": "https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
       "category": "lego",
+      "checked": true,
+      "id": 1
+    },
+    {
+      "title": "BobbyCar",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "postalCode": "34345",
+      "image": "https://images.unsplash.com/photo-1529313779164-31ef6a34524f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9iYnklMjBjYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60",
+      "category": "outdoor",
       "checked": false,
-      "id": 10
+      "id": 2
+    },
+    {
+      "title": "Lego Bausteine",
+      "details": "Sehr viele Teile",
+      "postalCode": "",
+      "image": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "category": "lego",
+      "checked": false,
+      "id": 3
+    },
+    {
+      "title": "Spielküche aus Holz",
+      "details": "wwwwww",
+      "postalCode": "34567",
+      "image": "https://images.unsplash.com/photo-1624895674105-6c63a2b0ce96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+      "category": "wood",
+      "checked": true,
+      "id": 4
     }
   ]
 }

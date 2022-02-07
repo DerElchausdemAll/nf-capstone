@@ -9,7 +9,7 @@ const Profile = () => {
 				<title key="title">About</title>
 				<meta key="description" name="description" content="About" />
 			</Head>
-			<h1>Profile</h1>
+			<h1>Favorites</h1>
 		</Layout>
 	);
 };
