@@ -2,7 +2,6 @@ import Head from "next/head";
 import React from "react";
 import Button from "@mui/material/Button";
 import Layout from "../organisms/layout";
-import Link from "next/link";
 
 // fontsource/roboto
 import "@fontsource/roboto/300.css";
