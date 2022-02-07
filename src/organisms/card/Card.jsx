@@ -29,7 +29,6 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const ItemsCard = ({ item }) => {
 	const [expanded, setExpanded] = React.useState(false);
 	const updateData = useStore(state => state.updateData);
-	const fetchData = useStore(state => state.fetchData);
 
 	const handleChange = () => {
 		updateData(item.id, item);
@@ -84,9 +83,3 @@ const ItemsCard = ({ item }) => {
 };
 
 export default ItemsCard;
-
-// fetch(`http://localhost:8000/items/${item.id}`, {
-// 	method: "PUT",
-// 	headers: { "Content-type": "application/json" },
-// 	body: JSON.stringify({ ...item, checked: nextChecked }),
-// });
