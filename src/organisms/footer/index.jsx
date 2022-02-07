@@ -1,4 +1,8 @@
 import React from "react";
+import Link from "next/link";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import BottomNavigation from "@mui/material/BottomNavigation";
 
 const Footer = () => {
 	return (
@@ -10,7 +14,7 @@ const Footer = () => {
 				marginTop: "20px",
 			}}
 		>
-			<div>© 2022 by Me</div>
+			<div>Footer</div>
 		</footer>
 	);
 };
