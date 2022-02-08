@@ -26,7 +26,7 @@ const Page = () => {
 				<br />
 				<div style={{ display: "flex", justifyContent: "center" }}>
 					<Button variant="contained" href="/form">
-						Add a Item
+						Add an Item
 					</Button>
 				</div>
 			</div>
