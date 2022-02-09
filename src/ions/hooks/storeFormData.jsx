@@ -7,7 +7,7 @@ const useStore = create(set => {
 		setItemCards: items => set(state => ({ itemCards: [...state.itemCards, { ...items }] })),
 		fetchData: async () => {
 			console.log("attempting to fetch");
-			const response = await axios.get("http://localhost:8000/items");
+			const response = await axios.get("/api/cards");
 			const result = response.data;
 
 			set(() => ({ itemCards: result }));
@@ -15,7 +15,7 @@ const useStore = create(set => {
 		updateData: async (id, item) => {
 			console.log("updating database");
 			item.checked = !item.checked;
-			const { data } = await axios.put(`http://localhost:8000/items/${id}`, item);
+			const { data } = await axios.put(`/api/cards/${id}`, item);
 
 			set(state => {
 				const update = [...state.itemCards];
