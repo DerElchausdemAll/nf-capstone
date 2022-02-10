@@ -39,13 +39,13 @@ const handler = async (request, response) => {
 
 		case "DELETE" /* Delete a model by its ID */:
 			try {
-				const deletedPet = await Pet.deleteOne({ _id: id });
-				if (!deletedPet) {
-					return res.status(400).json({ success: false });
+				const deletedItem = await Item.deleteOne({ _id: id });
+				if (!deletedItem) {
+					return response.status(400).json({ success: false });
 				}
-				res.status(200).json({ success: true, data: {} });
+				response.status(200).json({ success: true, data: {} });
 			} catch (error) {
-				res.status(400).json({ success: false });
+				response.status(400).json({ success: false });
 			}
 			break;
 

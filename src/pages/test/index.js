@@ -22,7 +22,7 @@ const Test = ({ items }) => {
 			</Head>
 			<h1>Huhu</h1>
 			{items.map(item => (
-				<Link href={"http://localhost:3000/api/cards/"} key={item.id}>
+				<Link key={item.id} href="http://localhost:3000/api/cards/">
 					<h3>{item.title}</h3>
 				</Link>
 			))}
