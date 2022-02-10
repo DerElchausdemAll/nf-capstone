@@ -1,7 +1,7 @@
 import Item from "../../../ions/models/item.model";
 import dbConnect from "../../../ions/database/index";
 
-const handler = async (request, response) => {
+const handler = async (request, responseponse) => {
 	const { method } = request;
 
 	await dbConnect();
@@ -9,8 +9,8 @@ const handler = async (request, response) => {
 	switch (method) {
 		case "GET":
 			try {
-				const mongoResponse = await Item.find();
-				response.status(200).json(mongoResponse);
+				const mongoresponseponse = await Item.find();
+				responseponse.status(200).json(mongoresponseponse);
 			} catch (err) {
 				console.log(err);
 			}
@@ -19,27 +19,15 @@ const handler = async (request, response) => {
 		case "POST":
 			try {
 				console.log(request.body);
-				const mongoResponse = await Item.create(request.body);
-				response.status(201).json(mongoResponse);
+				const mongoresponseponse = await Item.create(request.body);
+				responseponse.status(201).json(mongoresponseponse);
 			} catch (err) {
 				console.log(err);
 			}
 			break;
 
-		// case "PUT":
-		// 	try {
-		// 		const { id } = request.params;
-		// 		const mongoResponse = await Item.findByIdAndUpdate(id, request.body, {
-		// 			returnDocument: "after",
-		// 		});
-		// 		response.status(200);
-		// 		response.send(mongoResponse);
-		// 	} catch (err) {
-		// 		console.log(err);
-		// 	}
-
 		default:
-			response.status(404).send("not found");
+			responseponse.status(404).send("not found");
 	}
 };
 

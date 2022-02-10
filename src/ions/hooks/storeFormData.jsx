@@ -12,14 +12,14 @@ const useStore = create(set => {
 
 			set(() => ({ itemCards: result }));
 		},
-		updateData: async (id, item) => {
+		updateData: async (_id, item) => {
 			console.log("updating database");
 			item.checked = !item.checked;
-			const { data } = await axios.put(`/api/cards/${id}`, item);
+			const { data } = await axios.put(`/api/cards/${_id}`, item);
 
 			set(state => {
 				const update = [...state.itemCards];
-				const index = update.findIndex(card => card.id === id);
+				const index = update.findIndex(card => card.id === _id);
 				update[index] = data;
 				return {
 					itemCards: update,

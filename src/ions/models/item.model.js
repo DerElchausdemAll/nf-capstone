@@ -7,7 +7,6 @@ const Schema = new mongoose.Schema({
 	image: String,
 	category: String,
 	checked: Boolean,
-	id: Number,
 });
 
 export default mongoose.models.Item || mongoose.model("Item", Schema);
