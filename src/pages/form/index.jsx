@@ -10,6 +10,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useRouter } from "next/router";
 import useStore from "../../ions/hooks/storeFormData";
+import axios from "axios";
 
 const Items = () => {
 	// const itemCards = useStore(state => state.itemCards);
@@ -60,18 +61,20 @@ const Items = () => {
 		}
 
 		if (title && details && image) {
-			fetch("http://localhost:8000/items", {
-				method: "POST",
-				headers: { "Content-type": "application/json" },
-				body: JSON.stringify({
-					title,
-					details,
-					postalCode,
-					image,
-					category,
-					checked: false,
-				}),
-			});
+			const inputForm = { title, details, postalCode, image, category, checked: false };
+			axios.post("/api/cards", inputForm).then(response => console.log(response));
+			// 	fetch("/api/cards", {
+			// 	method: "POST",
+			// 	headers: { "Content-type": "application/json" },
+			// 	body: JSON.stringify({
+			// 		title,
+			// 		details,
+			// 		postalCode,
+			// 		image,
+			// 		category,
+			// 		checked: false,
+			// 	}),
+			// });
 		}
 		router.push("/items");
 	};

@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
-const todoSchema = new mongoose.Schema({
-	// set by client
-	name: String,
-
-	// set by server
-	isChecked: Boolean,
+const Schema = new mongoose.Schema({
+	title: String,
+	details: String,
+	postalCode: String,
+	image: String,
+	category: String,
+	checked: Boolean,
+	id: Number,
 });
 
-const Todo = mongoose.model("Todo", todoSchema);
-
-export default Todo;
+export default mongoose.models.Item || mongoose.model("Item", Schema);
