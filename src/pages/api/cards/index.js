@@ -1,4 +1,4 @@
-import Todo from "../../../ions/models/item.model";
+import Item from "../../../ions/models/item.model";
 import dbConnect from "../../../ions/database/index";
 
 const handler = async (request, response) => {
@@ -9,7 +9,7 @@ const handler = async (request, response) => {
 	switch (method) {
 		case "GET":
 			try {
-				const mongoResponse = await Todo.find();
+				const mongoResponse = await Item.find();
 				response.status(200).json(mongoResponse);
 			} catch (err) {
 				console.log(err);
@@ -19,7 +19,7 @@ const handler = async (request, response) => {
 		case "POST":
 			try {
 				console.log(request.body);
-				const mongoResponse = await Todo.create(request.body);
+				const mongoResponse = await Item.create(request.body);
 				response.status(201).json(mongoResponse);
 			} catch (err) {
 				console.log(err);
@@ -29,7 +29,7 @@ const handler = async (request, response) => {
 		// case "PUT":
 		// 	try {
 		// 		const { id } = request.params;
-		// 		const mongoResponse = await Todo.findByIdAndUpdate(id, request.body, {
+		// 		const mongoResponse = await Item.findByIdAndUpdate(id, request.body, {
 		// 			returnDocument: "after",
 		// 		});
 		// 		response.status(200);

@@ -10,4 +10,4 @@ const Schema = new mongoose.Schema({
 	id: Number,
 });
 
-export default mongoose.models.Todo || mongoose.model("Todo", Schema);
+export default mongoose.models.Item || mongoose.model("Item", Schema);
