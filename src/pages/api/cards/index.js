@@ -9,8 +9,8 @@ const handler = async (request, response) => {
 	switch (method) {
 		case "GET":
 			try {
-				const mongoResponse = await Item.find();
-				response.status(200).json(mongoResponse);
+				const mongoresponse = await Item.find();
+				response.status(200).json(mongoresponse);
 			} catch (err) {
 				console.log(err);
 			}
@@ -19,24 +19,12 @@ const handler = async (request, response) => {
 		case "POST":
 			try {
 				console.log(request.body);
-				const mongoResponse = await Item.create(request.body);
-				response.status(201).json(mongoResponse);
+				const mongoresponse = await Item.create(request.body);
+				response.status(201).json(mongoresponse);
 			} catch (err) {
 				console.log(err);
 			}
 			break;
-
-		// case "PUT":
-		// 	try {
-		// 		const { id } = request.params;
-		// 		const mongoResponse = await Item.findByIdAndUpdate(id, request.body, {
-		// 			returnDocument: "after",
-		// 		});
-		// 		response.status(200);
-		// 		response.send(mongoResponse);
-		// 	} catch (err) {
-		// 		console.log(err);
-		// 	}
 
 		default:
 			response.status(404).send("not found");

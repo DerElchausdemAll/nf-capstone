@@ -31,7 +31,7 @@ const ItemsCard = ({ item }) => {
 	const updateData = useStore(state => state.updateData);
 
 	const handleChange = () => {
-		updateData(item.id, item);
+		updateData(item._id, item);
 	};
 
 	const handleExpandClick = () => {
