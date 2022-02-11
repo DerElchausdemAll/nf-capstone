@@ -1,7 +1,7 @@
 import Item from "../../../ions/models/item.model";
 import dbConnect from "../../../ions/database/index";
 
-const handler = async (request, responseponse) => {
+const handler = async (request, response) => {
 	const { method } = request;
 
 	await dbConnect();
@@ -9,8 +9,8 @@ const handler = async (request, responseponse) => {
 	switch (method) {
 		case "GET":
 			try {
-				const mongoresponseponse = await Item.find();
-				responseponse.status(200).json(mongoresponseponse);
+				const mongoresponse = await Item.find();
+				response.status(200).json(mongoresponse);
 			} catch (err) {
 				console.log(err);
 			}
@@ -19,15 +19,15 @@ const handler = async (request, responseponse) => {
 		case "POST":
 			try {
 				console.log(request.body);
-				const mongoresponseponse = await Item.create(request.body);
-				responseponse.status(201).json(mongoresponseponse);
+				const mongoresponse = await Item.create(request.body);
+				response.status(201).json(mongoresponse);
 			} catch (err) {
 				console.log(err);
 			}
 			break;
 
 		default:
-			responseponse.status(404).send("not found");
+			response.status(404).send("not found");
 	}
 };
 
