@@ -20,6 +20,7 @@ const Footer = () => {
 					onChange={(event, newValue) => {
 						setValue(newValue);
 					}}
+					sx={{ background: "#02A676" }}
 				>
 					<BottomNavigationAction label="Home" icon={<HomeIcon />} href="/" />
 					<BottomNavigationAction label="Items" icon={<FavoriteIcon />} href="/items" />

@@ -7,9 +7,11 @@ import useStore from "../../ions/hooks/storeFormData";
 const Page = () => {
 	const fetchData = useStore(state => state.fetchData);
 	const updateData = useStore(state => state.updateData);
+	const deleteData = useStore(state => state.deleteData);
+
 	useEffect(() => {
 		fetchData();
-	}, [updateData]);
+	}, [updateData, deleteData]);
 
 	return (
 		<Layout>
