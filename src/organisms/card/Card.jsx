@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -13,7 +13,6 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import useStore from "../../ions/hooks/storeFormData";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Button from "@mui/material/Button";
 import Link from "next/link";
 
 const ExpandMore = styled(props => {
@@ -71,9 +70,7 @@ const ItemsCard = ({ item }) => {
 				<CardMedia component="img" height="194" image={item.image} alt={item.title} />
 
 				<CardActions disableSpacing>
-					<Button color="primary" onSubmit={handleDelete}>
-						Delete
-					</Button>
+					<DeleteIcon color="primary" onClick={handleDelete} />
 					<ExpandMore
 						expand={expanded}
 						onClick={handleExpandClick}
