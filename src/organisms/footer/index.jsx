@@ -27,9 +27,9 @@ const Footer = () => {
 					<BottomNavigationAction
 						label="Profil"
 						icon={<AccountCircleIcon />}
-						href="profile"
+						href="/profile"
 					/>
-					<BottomNavigationAction label="Form" icon={<AddCircleIcon />} href="form" />
+					<BottomNavigationAction label="Form" icon={<AddCircleIcon />} href="/form" />
 				</BottomNavigation>
 			</Paper>
 		</footer>

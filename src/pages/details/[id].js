@@ -33,17 +33,16 @@ const Details = ({ item }) => {
 	console.log(item);
 
 	return (
-		<div>
-			<Layout>
-				<Head>
-					<title key="title">About</title>
-					<meta key="description" name="description" content="About" />
-				</Head>
-				<div>Test</div>
-				<p>{item.title}</p>
-				<div>Test</div>
-			</Layout>
-		</div>
+		<Layout>
+			<Head>
+				<title key="title">About</title>
+				<meta key="description" name="description" content="About" />
+			</Head>
+
+			<h1>{item.title}</h1>
+			<img src={item.image} alt={item.title} />
+			<h4>{item.details}</h4>
+		</Layout>
 	);
 };
 export default Details;
