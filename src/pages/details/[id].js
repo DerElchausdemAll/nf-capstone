@@ -5,6 +5,7 @@ import Layout from "../../organisms/layout";
 export const getStaticPaths = async () => {
 	const response = await fetch("http://localhost:3000/api/cards");
 	const data = await response.json();
+	console.log(data);
 
 	const paths = data.map(item => {
 		return {
