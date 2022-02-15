@@ -9,7 +9,7 @@ const Test = () => {
 				<title key="title">About</title>
 				<meta key="description" name="description" content="About" />
 			</Head>
-			<h1>Huhu</h1>
+			<h1>Your request was send to the user!</h1>
 		</Layout>
 	);
 };

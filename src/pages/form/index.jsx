@@ -25,6 +25,8 @@ const Items = () => {
 	const [detailsError, setDetailsError] = useState(false);
 	const [imageError, setImageError] = useState(false);
 	const [postalCodeError, setPostalCodeError] = useState(false);
+	const [emailAddress, setEmailAddress] = useState("");
+	const [emailAddressError, setEmailAddressError] = useState(false);
 
 	const [category, setCategory] = useState("");
 
@@ -43,6 +45,7 @@ const Items = () => {
 		setDetailsError(false);
 		setImageError(false);
 		setPostalCodeError(false);
+		setEmailAddressError(false);
 
 		if (title === "") {
 			setTitleError(true);
@@ -50,6 +53,10 @@ const Items = () => {
 
 		if (details === "") {
 			setDetailsError(true);
+		}
+
+		if (emailAddressError === "") {
+			setEmailAddressError(true);
 		}
 
 		if (postalCode === "") {
@@ -61,20 +68,16 @@ const Items = () => {
 		}
 
 		if (title && details && image) {
-			const inputForm = { title, details, postalCode, image, category, checked: false };
+			const inputForm = {
+				title,
+				details,
+				emailAddress,
+				postalCode,
+				image,
+				category,
+				checked: false,
+			};
 			axios.post("/api/cards", inputForm).then(response => console.log(response));
-			// 	fetch("/api/cards", {
-			// 	method: "POST",
-			// 	headers: { "Content-type": "application/json" },
-			// 	body: JSON.stringify({
-			// 		title,
-			// 		details,
-			// 		postalCode,
-			// 		image,
-			// 		category,
-			// 		checked: false,
-			// 	}),
-			// });
 		}
 		router.push("/items");
 	};
@@ -120,6 +123,20 @@ const Items = () => {
 						rows={6}
 						error={detailsError}
 						onChange={e => setDetails(e.target.value)}
+					/>
+					<TextField
+						fullWidth
+						sx={{
+							marginTop: 5,
+							marginBottom: 5,
+							display: "block",
+						}}
+						variant="outlined"
+						color="secondary"
+						label="E-Mail"
+						name="emailAddress"
+						error={emailAddressError}
+						onChange={e => setEmailAddress(e.target.value)}
 					/>
 					<TextField
 						fullWidth
