@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ItemsCard from "../../organisms/card/Card";
@@ -6,19 +6,36 @@ import useStore from "../../ions/hooks/storeFormData";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
+import PopupState, { bindMenu } from "material-ui-popup-state";
+import Popover from "@mui/material/Popover";
+import { usePopupState, bindTrigger, bindPopover } from "material-ui-popup-state/hooks";
+import TemporaryDrawer from "../filterbar/TemporaryDrawer";
 
 const Items = () => {
 	const itemCards = useStore(state => state.itemCards);
 	const [bookmark, setBookmark] = useState(itemCards);
+
+	// const handleFilter = () => {
+	// 	const outdoor = itemCards.filter(card => card.category === "outdoor");
+	// 	// const playmobil = itemCards.filter(card => card.category === "playmobil");
+	// 	// const wood = itemCards.filter(card => card.category === "wood");
+	// 	// const cars = itemCards.filter(card => card.category === "cars");
+	// 	// const others = itemCards.filter(card => card.category === "other");
+
+	// 	if (handleTest === outdoor) {
+	// 		itemCards === outdoor;
+	// 	}
+	// };
 
 	const handleBookmark = () => {
 		setBookmark(!bookmark);
 	};
 	const favorites = itemCards.filter(card => card.checked === true);
 
-	// const handleFilterMenu = () => {
-	// 	console.log("Huhu, hier kommt bald ein Menu von oben");
+	// const handleTest = favorites => {
+	// 	const lego = itemCards.filter(card => card.category === "lego");
+	// 	console.log(lego);
+	// 	favorites = lego;
 	// };
 
 	return (
@@ -30,24 +47,7 @@ const Items = () => {
 					margin: "15px",
 				}}
 			>
-				<PopupState variant="popover" popupId="demo-popup-menu">
-					{popupState => (
-						<React.Fragment>
-							<Button
-								variant="contained"
-								{...bindTrigger(popupState)}
-								style={{ width: "120px" }}
-							>
-								Filter
-							</Button>
-							<Menu {...bindMenu(popupState)}>
-								<MenuItem onClick={popupState.close}>Category</MenuItem>
-								<MenuItem onClick={popupState.close}>Category</MenuItem>
-								<MenuItem onClick={popupState.close}>Category</MenuItem>
-							</Menu>
-						</React.Fragment>
-					)}
-				</PopupState>
+				<TemporaryDrawer>sadasd</TemporaryDrawer>
 
 				<Button variant="contained" onClick={handleBookmark} style={{ width: "120px" }}>
 					{!bookmark ? "Show All" : "Favorites"}
@@ -56,7 +56,7 @@ const Items = () => {
 			<Container>
 				<Grid container spacing={3}>
 					{(bookmark ? itemCards : favorites).map(item => (
-						<Grid item key={item.id} xs={12} sm={6} md={3}>
+						<Grid item key={item._id} xs={12} sm={6} md={3}>
 							<ItemsCard item={item} />
 						</Grid>
 					))}
@@ -67,44 +67,3 @@ const Items = () => {
 };
 
 export default Items;
-
-// import styled from "@emotion/styled";
-
-// const Nav = styled.nav`
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: space-between;
-// 	background: white;
-// 	width: 100vw;
-// 	height: 100vh;
-// 	transition: width 1s, height 1s;
-// 	overflow: hidden;
-// `;
-
-// const handleFilterMenu = () => {
-// 	return `<nav>
-// 		<ul>
-// 			<li>
-// 			Just a test
-// 			</li>
-// 			<li>
-// 			Just a test
-// 			</li>
-// 			<li>
-// 			Just a test
-// 			</li>
-// 			<li>
-// 			Just a test
-// 			</li>
-// 			<li>
-// 			Just a test
-// 			</li>
-// 		</ul>
-// 	</Nav>`;
-// };
-
-{
-	/* <div>
-	<handleFilterMenu />
-</div>; */
-}

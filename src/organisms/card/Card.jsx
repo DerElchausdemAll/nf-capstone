@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -12,6 +12,8 @@ import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import useStore from "../../ions/hooks/storeFormData";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Link from "next/link";
 
 const ExpandMore = styled(props => {
 	const { expand, ...other } = props;
@@ -29,9 +31,14 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const ItemsCard = ({ item }) => {
 	const [expanded, setExpanded] = React.useState(false);
 	const updateData = useStore(state => state.updateData);
+	const deleteData = useStore(state => state.deleteData);
 
 	const handleChange = () => {
 		updateData(item._id, item);
+	};
+
+	const handleDelete = () => {
+		deleteData(item._id, item);
 	};
 
 	const handleExpandClick = () => {
@@ -53,12 +60,17 @@ const ItemsCard = ({ item }) => {
 							checkedIcon={<Favorite />}
 						/>
 					}
-					title={item.title}
+					title={
+						<Link key={item._id} href={"/details/" + item._id}>
+							<h4>{item.title}</h4>
+						</Link>
+					}
 					subheader={item.category}
 				/>
 				<CardMedia component="img" height="194" image={item.image} alt={item.title} />
 
 				<CardActions disableSpacing>
+					<DeleteIcon color="primary" onClick={handleDelete} />
 					<ExpandMore
 						expand={expanded}
 						onClick={handleExpandClick}

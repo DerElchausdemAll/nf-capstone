@@ -14,7 +14,7 @@ const handler = async (request, response) => {
 			try {
 				const item = await Item.findById(id);
 				if (item) {
-					return response.status(400).json({ success: false });
+					response.status(200).json(item);
 				}
 				response.status(200).json({ success: true, data: item });
 			} catch (error) {

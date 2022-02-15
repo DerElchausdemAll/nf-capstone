@@ -26,6 +26,20 @@ const useStore = create(set => {
 				};
 			});
 		},
+		deleteData: async (_id, item) => {
+			console.log("delete data");
+			const { data } = await axios.delete(`/api/cards/${_id}`, item);
+
+			set(state => {
+				const update = [...state.itemCards];
+				const index = update.findIndex(card => card.id === _id);
+				update[index] = data;
+				window.location.reload();
+				return {
+					itemCards: update,
+				};
+			});
+		},
 	};
 });
 

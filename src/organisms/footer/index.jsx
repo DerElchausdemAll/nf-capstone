@@ -1,5 +1,4 @@
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
@@ -20,15 +19,16 @@ const Footer = () => {
 					onChange={(event, newValue) => {
 						setValue(newValue);
 					}}
+					sx={{ background: "#02A676" }}
 				>
 					<BottomNavigationAction label="Home" icon={<HomeIcon />} href="/" />
 					<BottomNavigationAction label="Items" icon={<FavoriteIcon />} href="/items" />
 					<BottomNavigationAction
 						label="Profil"
 						icon={<AccountCircleIcon />}
-						href="profile"
+						href="/profile"
 					/>
-					<BottomNavigationAction label="Form" icon={<AddCircleIcon />} href="form" />
+					<BottomNavigationAction label="Form" icon={<AddCircleIcon />} href="/form" />
 				</BottomNavigation>
 			</Paper>
 		</footer>
