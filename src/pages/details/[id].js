@@ -30,14 +30,14 @@ const Details = ({ item }) => {
 				action="https://formsubmit.co/ad0e3f4cfb1c6c98b6cb45ba210dc2f8"
 				method="POST"
 			>
-				<TextField type="email" name="email" placeholder="Enter your Email here" required />
+				<TextField required type="email" name="email" placeholder="Enter your Email here" />
 				<TextField
+					required
 					multiline
 					type="text"
 					name="name"
 					rows={6}
 					placeholder="Enter your message here"
-					required
 				/>
 				<TextField type="hidden" name="_next" value="/details/" />
 				<Button color="primary" variant="contained" type="submit">

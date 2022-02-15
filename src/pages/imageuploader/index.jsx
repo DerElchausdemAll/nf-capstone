@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Layout from "../../organisms/layout";
 import axios from "axios";
 import { Image } from "cloudinary-react";
+import Button from "@mui/material/Button";
 
 const Profile = () => {
 	const [imageSelected, setImageSelected] = useState("");
@@ -34,8 +35,8 @@ const Profile = () => {
 						setImageSelected(event.target.files[0]);
 					}}
 				/>
-				<button onClick={uploadImage}>Upload Image</button>
-				<Image cloudName="dozopgbei" publicId={image} />
+				<Button onClick={uploadImage}>Upload Image</Button>
+				<Image cloudName="dozopgbei" publicId={image} alt="" />
 			</div>
 		</Layout>
 	);
