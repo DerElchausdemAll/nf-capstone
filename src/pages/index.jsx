@@ -2,14 +2,12 @@ import Head from "next/head";
 import React from "react";
 import Button from "@mui/material/Button";
 import Layout from "../organisms/layout";
-
-// fontsource/roboto
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import { useSession, signIn, signOut } from "next-auth/react";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Page = () => {
+	const { data: session } = useSession();
+	console.log(session);
 	return (
 		<Layout>
 			<Head>
@@ -20,6 +18,29 @@ const Page = () => {
 				<h1 style={{ display: "flex", justifyContent: "center" }}>Spielzeug-Verleih-App</h1>
 				<br />
 				<br />
+				{session ? (
+					<div>
+						<img src={session.user.image} alt={session.user.name} />
+						<h2>{session.user.name}</h2>
+						<Button
+							onClick={() => {
+								signOut();
+							}}
+						>
+							Logout
+						</Button>{" "}
+					</div>
+				) : (
+					<Button
+						startIcon={<GitHubIcon />}
+						onClick={() => {
+							signIn("github");
+						}}
+					>
+						Login with GitHub
+					</Button>
+				)}
+
 				<br />
 				<br />
 				<br />
