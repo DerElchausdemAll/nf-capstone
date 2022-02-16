@@ -28,7 +28,7 @@ const ExpandMore = styled(props => {
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-const ItemsCard = ({ item }) => {
+const ItemsCard = ({ item, isMine }) => {
 	const [expanded, setExpanded] = React.useState(false);
 	const updateData = useStore(state => state.updateData);
 	const deleteData = useStore(state => state.deleteData);
@@ -70,7 +70,7 @@ const ItemsCard = ({ item }) => {
 				<CardMedia component="img" height="194" image={item.image} alt={item.title} />
 
 				<CardActions disableSpacing>
-					<DeleteIcon color="primary" onClick={handleDelete} />
+					{isMine && <DeleteIcon color="primary" onClick={handleDelete} />}
 					<ExpandMore
 						expand={expanded}
 						onClick={handleExpandClick}

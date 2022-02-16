@@ -10,10 +10,12 @@ import PopupState, { bindMenu } from "material-ui-popup-state";
 import Popover from "@mui/material/Popover";
 import { usePopupState, bindTrigger, bindPopover } from "material-ui-popup-state/hooks";
 import TemporaryDrawer from "../filterbar/TemporaryDrawer";
+import { useSession } from "next-auth/react";
 
 const Items = () => {
 	const itemCards = useStore(state => state.itemCards);
 	const [bookmark, setBookmark] = useState(itemCards);
+	const { data: session } = useSession();
 
 	// const handleFilter = () => {
 	// 	const outdoor = itemCards.filter(card => card.category === "outdoor");
@@ -57,7 +59,7 @@ const Items = () => {
 				<Grid container spacing={3}>
 					{(bookmark ? itemCards : favorites).map(item => (
 						<Grid item key={item._id} xs={12} sm={6} md={3}>
-							<ItemsCard item={item} />
+							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
 						</Grid>
 					))}
 				</Grid>
