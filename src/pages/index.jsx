@@ -2,8 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Button from "@mui/material/Button";
 import Layout from "../organisms/layout";
-import { useSession, signIn, signOut } from "next-auth/react";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { useSession } from "next-auth/react";
 
 const Page = () => {
 	const { data: session } = useSession();
@@ -32,7 +31,7 @@ const Page = () => {
 						</div>
 					</div>
 				) : (
-					<div></div>
+					<div />
 				)}
 			</div>
 		</Layout>
