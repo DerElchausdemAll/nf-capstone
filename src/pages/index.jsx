@@ -18,38 +18,22 @@ const Page = () => {
 				<h1 style={{ display: "flex", justifyContent: "center" }}>Spielzeug-Verleih-App</h1>
 				<br />
 				<br />
-				{session ? (
-					<div>
-						<img src={session.user.image} alt={session.user.name} />
-						<h2>{session.user.name}</h2>
-						<Button
-							onClick={() => {
-								signOut();
-							}}
-						>
-							Logout
-						</Button>{" "}
-					</div>
-				) : (
-					<Button
-						startIcon={<GitHubIcon />}
-						onClick={() => {
-							signIn("github");
-						}}
-					>
-						Login with GitHub
-					</Button>
-				)}
 
 				<br />
 				<br />
 				<br />
 				<br />
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					<Button variant="contained" href="/form">
-						Add an Item
-					</Button>
-				</div>
+				{session ? (
+					<div>
+						<div style={{ display: "flex", justifyContent: "center" }}>
+							<Button variant="contained" href="/form">
+								Add an Item
+							</Button>
+						</div>
+					</div>
+				) : (
+					<div></div>
+				)}
 			</div>
 		</Layout>
 	);
