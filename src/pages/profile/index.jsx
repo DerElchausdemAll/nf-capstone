@@ -47,7 +47,7 @@ const Profile = () => {
 
 					<Grid container spacing={3}>
 						{content?.map(item => (
-							<Grid item key={item._id} xs={12} sm={6} md={3}>
+							<Grid key={item._id} item xs={12} sm={6} md={3}>
 								<ItemsCard item={item} />
 							</Grid>
 						))}
