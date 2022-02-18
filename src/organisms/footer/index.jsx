@@ -8,27 +8,39 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Footer = () => {
-	const [value, setValue] = React.useState(0);
+	// const [value, setValue] = React.useState(0);
 
 	return (
 		<footer style={{ paddingTop: "100px" }}>
-			<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} elevation={6}>
+			<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
 				<BottomNavigation
-					showLabels
-					value={value}
-					onChange={(event, newValue) => {
-						setValue(newValue);
-					}}
+					// showLabels
+					// value={value}
+					// onChange={(event, newValue) => {
+					// 	setValue(newValue);
+					// }}
 					sx={{ background: "#02A676" }}
 				>
-					<BottomNavigationAction label="Home" icon={<HomeIcon />} href="/" />
-					<BottomNavigationAction label="Items" icon={<FavoriteIcon />} href="/items" />
+					<BottomNavigationAction
+						label="Home"
+						icon={<HomeIcon fontSize="large" sx={{ color: "white" }} />}
+						href="/"
+					/>
+					<BottomNavigationAction
+						label="Items"
+						icon={<FavoriteIcon fontSize="large" sx={{ color: "white" }} />}
+						href="/items"
+					/>
 					<BottomNavigationAction
 						label="Profil"
-						icon={<AccountCircleIcon />}
+						icon={<AccountCircleIcon fontSize="large" sx={{ color: "white" }} />}
 						href="/profile"
 					/>
-					<BottomNavigationAction label="Form" icon={<AddCircleIcon />} href="/form" />
+					<BottomNavigationAction
+						label="Form"
+						icon={<AddCircleIcon fontSize="large" sx={{ color: "white" }} />}
+						href="/form"
+					/>
 				</BottomNavigation>
 			</Paper>
 		</footer>

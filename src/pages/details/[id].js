@@ -10,6 +10,10 @@ import Item from "../../ions/models/item.model";
 const Details = ({ item }) => {
 	console.log(item);
 
+	// get userid from item
+	// find userby userid
+	// change email to users email
+
 	return (
 		<Layout>
 			<Head>
@@ -27,7 +31,7 @@ const Details = ({ item }) => {
 			<br />
 			<form
 				style={{ display: "flex", flexDirection: "column" }}
-				action="https://formsubmit.co/ad0e3f4cfb1c6c98b6cb45ba210dc2f8"
+				action="https://formsubmit.co/peter.jan@mail.de"
 				method="POST"
 			>
 				<TextField required type="email" name="email" placeholder="Enter your Email here" />

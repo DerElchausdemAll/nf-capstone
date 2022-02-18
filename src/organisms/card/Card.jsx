@@ -47,7 +47,7 @@ const ItemsCard = ({ item, isMine }) => {
 
 	return (
 		<div>
-			<Card>
+			<Card sx={{ background: "#FDFAFD", borderRadius: "12%" }}>
 				<CardHeader
 					action={
 						<Checkbox

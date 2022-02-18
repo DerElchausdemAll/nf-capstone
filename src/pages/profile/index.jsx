@@ -36,7 +36,7 @@ const Profile = () => {
 				<Container>
 					<Typography variant="h4">{session.user.name}</Typography>
 					<img
-						style={{ width: "250px" }}
+						style={{ width: "250px", borderRadius: "50%" }}
 						src={session.user.image}
 						alt={session.user.name}
 					/>
