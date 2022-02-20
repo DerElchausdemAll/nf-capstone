@@ -32,7 +32,7 @@ const Details = ({ item }) => {
 			<Typography variant="h4">Contact the User</Typography>
 			<br />
 			<br />
-			{/* funktioniert noch nicht */}
+			{/* funktioniert leider noch nicht */}
 			<form
 				style={{ display: "flex", flexDirection: "column" }}
 				action="https://formsubmit.co/peter.jan@mail.de"
