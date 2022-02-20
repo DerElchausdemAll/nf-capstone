@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import React, { useState } from "react";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import styles from "./style.module.css";
 
 const ImageSlider = ({ images }) => {
-	// const [content, setContent] = useState([]);
-	// const test = content;
-
 	const [current, setCurrent] = useState(0);
 	const length = images.length;
 
@@ -31,15 +27,6 @@ const ImageSlider = ({ images }) => {
 		);
 	}
 
-	// useEffect(() => {
-	// 	const fetchItem = async () => {
-	// 		const response = await axios.get(`/api/cards/`);
-	// 		const result = response.data[5].images;
-	// 		setContent(result);
-	// 	};
-	// 	fetchItem();
-	// }, []);
-
 	return (
 		<div className={styles.slider}>
 			<ArrowCircleLeftIcon className={styles.leftArrow} onClick={prevSlide} />
@@ -47,7 +34,7 @@ const ImageSlider = ({ images }) => {
 
 			{images.map((slide, index) => {
 				return (
-					<div>
+					<div key={images.id}>
 						{index === current && (
 							<img src={slide} alt="huhu" className={styles.image} />
 						)}

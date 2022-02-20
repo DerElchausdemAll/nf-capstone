@@ -39,9 +39,7 @@ const Items = () => {
 
 		setTitleError(false);
 		setDetailsError(false);
-		setImageError(false);
 		setPostalCodeError(false);
-		setEmailAddressError(false);
 
 		if (title === "") {
 			setTitleError(true);
