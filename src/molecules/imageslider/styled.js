@@ -5,9 +5,9 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 export const StyledArrowCircleLeftIcon = styled(ArrowCircleLeftIcon)`
 	position: absolute;
 	z-index: 10;
-	color: black;
 	top: 50%;
 	left: 0.2rem;
+	color: black;
 	font-size: 2rem;
 	cursor: pointer;
 	user-select: none;
@@ -20,8 +20,8 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledSlider = styled.div`
-	position: relative;
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 `;
@@ -29,9 +29,9 @@ export const StyledSlider = styled.div`
 export const StyledArrowCircleRightIcon = styled(ArrowCircleRightIcon)`
 	position: absolute;
 	z-index: 10;
-	color: black;
 	top: 50%;
 	right: 0.2rem;
+	color: black;
 	font-size: 2rem;
 	cursor: pointer;
 	user-select: none;
