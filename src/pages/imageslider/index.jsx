@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import styles from "./style.module.css";
+import { v4 as uuid } from "uuid";
 
 const ImageSlider = ({ images }) => {
 	const [current, setCurrent] = useState(0);
@@ -34,7 +35,7 @@ const ImageSlider = ({ images }) => {
 
 			{images.map((slide, index) => {
 				return (
-					<div key={images.id}>
+					<div key={uuid()}>
 						{index === current && (
 							<img src={slide} alt="huhu" className={styles.image} />
 						)}
