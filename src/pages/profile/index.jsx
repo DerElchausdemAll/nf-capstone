@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ItemsCard from "../../organisms/card/Card";
 import Typography from "@mui/material/Typography";
+import { StyledImage } from "./styled";
 
 const Profile = () => {
 	const { data: session } = useSession();
@@ -35,11 +36,7 @@ const Profile = () => {
 			{session ? (
 				<Container>
 					<Typography variant="h4">{session.user.name}</Typography>
-					<img
-						style={{ width: "250px", borderRadius: "50%" }}
-						src={session.user.image}
-						alt={session.user.name}
-					/>
+					<StyledImage src={session.user.image} alt={session.user.name} />
 					<br />
 					<br />
 					<br />

@@ -37,7 +37,6 @@ const Details = ({ item }) => {
 				style={{ display: "flex", flexDirection: "column" }}
 				// action="https://formsubmit.co/jan.peter92@mail.de"
 				// method="POST"
-
 				onSubmit={async event => {
 					event.preventDefault();
 					const formData = new FormData(event.target);
