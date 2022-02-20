@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import dbConnect from "../../ions/database/index";
 import Item from "../../ions/models/item.model";
-import ImageSlider from "../imageslider/index.jsx";
+import ImageSlider from "../../molecules/imageslider/ImageSlider";
 
 const Details = ({ item }) => {
 	console.log(item);
