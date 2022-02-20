@@ -6,11 +6,10 @@ import styles from "./style.module.css";
 
 const ImageSlider = ({ images }) => {
 	// const [content, setContent] = useState([]);
+	// const test = content;
 
 	const [current, setCurrent] = useState(0);
 	const length = images.length;
-
-	// const test = content;
 
 	const nextSlide = () => {
 		setCurrent(current === length - 1 ? 0 : current + 1);
@@ -21,6 +20,16 @@ const ImageSlider = ({ images }) => {
 	};
 
 	console.log(current);
+
+	if (images.length <= 0) {
+		return null;
+	}
+
+	if (images.length === 1) {
+		return (
+			<img src={images} style={{ width: "300px", height: "300px", borderRadius: "10px" }} />
+		);
+	}
 
 	// useEffect(() => {
 	// 	const fetchItem = async () => {
