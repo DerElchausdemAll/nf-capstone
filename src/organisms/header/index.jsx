@@ -2,20 +2,17 @@ import React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Button from "@mui/material/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Paper from "@mui/material/Paper";
 
 const Header = () => {
 	const { data: session } = useSession();
 	return (
 		<header style={{ paddingBottom: "36px" }}>
-			<Paper
+			<div
 				style={{
 					display: "flex",
 					justifyContent: "space-between",
 					flexDirection: "row",
-				}}
-				sx={{
-					background: "#02A676",
+					background: "white",
 					width: "100vw",
 					zIndex: "300",
 					position: "fixed",
@@ -64,7 +61,7 @@ const Header = () => {
 					{session ? (
 						<div>
 							<Button
-								variant="contained"
+								variant="outlined"
 								size="large"
 								sx={{ height: "4rem" }}
 								onClick={() => {
@@ -77,7 +74,7 @@ const Header = () => {
 					) : (
 						<Button
 							startIcon={<GitHubIcon />}
-							variant="contained"
+							variant="outlined"
 							size="large"
 							sx={{ height: "4rem" }}
 							onClick={() => {
@@ -88,7 +85,7 @@ const Header = () => {
 						</Button>
 					)}
 				</div>
-			</Paper>
+			</div>
 		</header>
 	);
 };

@@ -33,7 +33,7 @@ const Details = ({ item }) => {
 			<br />
 			<br />
 			{/* funktioniert leider noch nicht */}
-			<form
+			{/* <form
 				style={{ display: "flex", flexDirection: "column" }}
 				action="https://formsubmit.co/peter.jan@mail.de"
 				method="POST"
@@ -63,7 +63,7 @@ const Details = ({ item }) => {
 				<Button color="primary" variant="contained" type="submit">
 					Send
 				</Button>
-			</form>
+			</form> */}
 		</Layout>
 	);
 };
