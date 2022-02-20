@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import dbConnect from "../../ions/database/index";
 import Item from "../../ions/models/item.model";
 import ImageSlider from "../../molecules/imageslider/ImageSlider";
-import axios from "axios";
+// import axios from "axios";
 
 const Details = ({ item }) => {
 	console.log(item);
@@ -35,19 +35,19 @@ const Details = ({ item }) => {
 			{/* funktioniert noch nicht */}
 			<form
 				style={{ display: "flex", flexDirection: "column" }}
-				// action="https://formsubmit.co/jan.peter92@mail.de"
-				// method="POST"
-				onSubmit={async event => {
-					event.preventDefault();
-					const formData = new FormData(event.target);
-					const formValues = Object.fromEntries(formData);
-					try {
-						const response = await axios.post(`/api/mailer/${item.userId}`, formValues);
-						console.log("-------->", response);
-					} catch (err) {
-						console.error(err);
-					}
-				}}
+				action="https://formsubmit.co/peter.jan@mail.de"
+				method="POST"
+				// onSubmit={async event => {
+				// 	event.preventDefault();
+				// 	const formData = new FormData(event.target);
+				// 	const formValues = Object.fromEntries(formData);
+				// 	try {
+				// 		const response = await axios.post(`/api/mailer/${item.userId}`, formValues);
+				// 		console.log("-------->", response);
+				// 	} catch (err) {
+				// 		console.error(err);
+				// 	}
+				// }}
 			>
 				<input type="hidden" name="_captcha" value="false" />
 				<TextField required type="email" name="email" placeholder="Enter your Email here" />
