@@ -32,6 +32,7 @@
     "axios": "0.24.0",
     "cloudinary-react": "^1.7.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "material-ui-popup-state": "^2.0.0",
     "mongodb": "^4.3.1",
     "mongoose": "^6.2.1",
