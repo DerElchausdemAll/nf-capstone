@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ItemsCard from "../../organisms/card/Card";
 import Typography from "@mui/material/Typography";
-import { StyledImage } from "./styled";
+import { StyledImage } from "../../atoms/styled-image/styled";
 
 const Profile = () => {
 	const { data: session } = useSession();
