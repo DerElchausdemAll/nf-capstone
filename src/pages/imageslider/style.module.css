@@ -1,6 +1,5 @@
 .slider {
 	position: relative;
-	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -11,8 +10,8 @@
 }
 
 .image {
-	width: 1000px;
-	height: 600px;
+	width: 500px;
+	height: 300px;
 	border-radius: 10px;
 }
 
@@ -21,7 +20,7 @@
 	top: 50%;
 	right: 32px;
 	font-size: 3rem;
-	color: red;
+	color: black;
 	z-index: 10;
 	cursor: pointer;
 	user-select: none;
@@ -32,19 +31,8 @@
 	top: 50%;
 	left: 32px;
 	font-size: 3rem;
-	color: red;
+	color: black;
 	z-index: 10;
 	cursor: pointer;
 	user-select: none;
-}
-
-.slide {
-	opacity: 0;
-	transition-duration: 1s ease;
-}
-
-.slide.active {
-	opacity: 1;
-	transition-duration: 1s;
-	transform: scale(1.08);
 }

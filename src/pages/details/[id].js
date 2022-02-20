@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import dbConnect from "../../ions/database/index";
 import Item from "../../ions/models/item.model";
+import ImageSlider from "../imageslider/index.jsx";
 
 const Details = ({ item }) => {
 	console.log(item);
@@ -21,7 +22,8 @@ const Details = ({ item }) => {
 				<meta key="description" name="description" content="About" />
 			</Head>
 			<h1>{item.title}</h1>
-			<img width="350" height="350" src={item.image} alt={item.title} />
+			<ImageSlider images={item.images} />
+
 			<Typography variant="h4">Description</Typography>
 			<h4>{item.details}</h4>
 			<br />

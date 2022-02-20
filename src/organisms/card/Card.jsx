@@ -64,7 +64,11 @@ const ItemsCard = ({ item, isMine }) => {
 						}
 						title={
 							<Link key={item._id} href={"/details/" + item._id}>
-								<Typography variant="h4" color="primary">
+								<Typography
+									variant="h4"
+									color="primary"
+									sx={{ cursor: "pointer", userSelect: "none" }}
+								>
 									{item.title}
 								</Typography>
 							</Link>
