@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
 import {
 	StyledArrowCircleLeftIcon,
 	StyledArrowCircleRightIcon,
@@ -36,7 +35,7 @@ const ImageSlider = ({ images }) => {
 
 			{images.map((slide, index) => {
 				return (
-					<div key={uuid()}>
+					<div key={slide}>
 						{index === current && <StyledImage src={slide} alt="huhu" sx={{}} />}
 					</div>
 				);
