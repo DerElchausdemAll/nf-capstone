@@ -1,5 +1,4 @@
 import axios from "axios";
-import Item from "../../../ions/models/item.model";
 import dbConnect from "../../../ions/database/index";
 import User from "../../../ions/models/user.model";
 

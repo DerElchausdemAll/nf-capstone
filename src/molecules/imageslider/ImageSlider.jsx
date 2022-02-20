@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import styles from "./style.module.css";
 import { v4 as uuid } from "uuid";
-import { StyledArrowCircleLeftIcon, StyledArrowCircleRightIcon } from "./styled";
+import {
+	StyledArrowCircleLeftIcon,
+	StyledArrowCircleRightIcon,
+	StyledSlider,
+	StyledImage,
+} from "./styled";
 
 const ImageSlider = ({ images }) => {
 	const [current, setCurrent] = useState(0);
@@ -22,26 +26,22 @@ const ImageSlider = ({ images }) => {
 	}
 
 	if (images.length === 1) {
-		return (
-			<img src={images} style={{ width: "300px", height: "300px", borderRadius: "10px" }} />
-		);
+		return <StyledImage src={images} />;
 	}
 
 	return (
-		<div className={styles.slider}>
+		<StyledSlider>
 			<StyledArrowCircleLeftIcon onClick={prevSlide} />
 			<StyledArrowCircleRightIcon onClick={nextSlide} />
 
 			{images.map((slide, index) => {
 				return (
 					<div key={uuid()}>
-						{index === current && (
-							<img src={slide} alt="huhu" className={styles.image} />
-						)}
+						{index === current && <StyledImage src={slide} alt="huhu" sx={{}} />}
 					</div>
 				);
 			})}
-		</div>
+		</StyledSlider>
 	);
 };
 

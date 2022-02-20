@@ -21,7 +21,6 @@ const Items = () => {
 	const [details, setDetails] = useState("");
 	const [postalCode, setPostalCode] = useState("");
 	const [category, setCategory] = useState("");
-
 	const [titleError, setTitleError] = useState(false);
 	const [detailsError, setDetailsError] = useState(false);
 	const [postalCodeError, setPostalCodeError] = useState(false);

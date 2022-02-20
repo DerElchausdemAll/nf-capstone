@@ -4,7 +4,6 @@ import Layout from "../../organisms/layout";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import useStore from "../../ions/hooks/storeFormData";
-import Input from "@mui/material/Input";
 
 const ImageUploader = () => {
 	const [imageSelected, setImageSelected] = useState([]);
@@ -42,10 +41,10 @@ const ImageUploader = () => {
 				<meta key="description" name="description" content="About" />
 			</Head>
 			<div>
-				<Input
+				<input
 					multiple
-					accept="image/*"
 					type="file"
+					accept="image/*"
 					onChange={event => {
 						setImageSelected(event.target.files);
 					}}

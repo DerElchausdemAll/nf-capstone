@@ -13,11 +13,18 @@ export const StyledArrowCircleLeftIcon = styled(ArrowCircleLeftIcon)`
 	user-select: none;
 `;
 
-// export const StyledImage = styled(Image)`
-// 	width: 300px;
-// 	height: 300px;
-// 	border-radius: 10px;
-// `;
+export const StyledImage = styled.img`
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+`;
+
+export const StyledSlider = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 export const StyledArrowCircleRightIcon = styled(ArrowCircleRightIcon)`
 	position: absolute;
