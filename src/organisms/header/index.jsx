@@ -60,13 +60,13 @@ const Header = () => {
 					></div>
 				</div>
 
-				<div style={{ justifyContent: "flex-end" }}>
+				<div>
 					{session ? (
 						<div>
 							<Button
 								variant="contained"
 								size="large"
-								sx={{ height: "70px" }}
+								sx={{ height: "4rem" }}
 								onClick={() => {
 									signOut();
 								}}
@@ -79,7 +79,7 @@ const Header = () => {
 							startIcon={<GitHubIcon />}
 							variant="contained"
 							size="large"
-							sx={{ height: "80px" }}
+							sx={{ height: "4rem" }}
 							onClick={() => {
 								signIn("github");
 							}}

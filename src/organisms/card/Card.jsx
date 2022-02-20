@@ -14,6 +14,7 @@ import Favorite from "@mui/icons-material/Favorite";
 import useStore from "../../ions/hooks/storeFormData";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import Box from "@mui/material/Box";
 
 const ExpandMore = styled(props => {
 	const { expand, ...other } = props;
@@ -47,49 +48,59 @@ const ItemsCard = ({ item, isMine }) => {
 
 	return (
 		<div>
-			<Card sx={{ background: "#FDFAFD", borderRadius: "12%" }}>
-				<CardHeader
-					action={
-						<Checkbox
-							checked={item.checked}
-							color="secondary"
-							onChange={handleChange}
-							inputProps={{ "aria-label": "controlled" }}
-							{...label}
-							icon={<FavoriteBorder />}
-							checkedIcon={<Favorite />}
-						/>
-					}
-					title={
-						<Link key={item._id} href={"/details/" + item._id}>
-							<h4>{item.title}</h4>
-						</Link>
-					}
-					subheader={item.category}
-				/>
-				<CardMedia component="img" height="194" image={item.image} alt={item.title} />
+			<Box sx={{ boxShadow: 3, borderRadius: "12%" }}>
+				<Card sx={{ background: "#FDFAFD", borderRadius: "12%" }}>
+					<CardHeader
+						action={
+							<Checkbox
+								checked={item.checked}
+								color="error"
+								onChange={handleChange}
+								inputProps={{ "aria-label": "controlled" }}
+								{...label}
+								icon={<FavoriteBorder />}
+								checkedIcon={<Favorite />}
+							/>
+						}
+						title={
+							<Link key={item._id} href={"/details/" + item._id}>
+								<Typography variant="h4" color="primary">
+									{item.title}
+								</Typography>
+							</Link>
+						}
+						subheader={item.category}
+					/>
+					<CardMedia
+						sx={{ padding: "0.5rem" }}
+						component="img"
+						height="194"
+						image={item.images[0]}
+						alt={item.title}
+					/>
 
-				<CardActions disableSpacing>
-					{isMine && <DeleteIcon color="primary" onClick={handleDelete} />}
-					<ExpandMore
-						expand={expanded}
-						onClick={handleExpandClick}
-						aria-expanded={expanded}
-						aria-label="show more"
-					>
-						<ExpandMoreIcon />
-					</ExpandMore>
-				</CardActions>
-				<Collapse in={expanded} timeout="auto" unmountOnExit>
-					<CardContent>
-						<Typography variant="body1">Description:</Typography>
-						<br />
-						<Typography variant="body2" color="primary">
-							{item.details}
-						</Typography>
-					</CardContent>
-				</Collapse>
-			</Card>
+					<CardActions disableSpacing>
+						{isMine && <DeleteIcon color="primary" onClick={handleDelete} />}
+						<ExpandMore
+							expand={expanded}
+							onClick={handleExpandClick}
+							aria-expanded={expanded}
+							aria-label="show more"
+						>
+							<ExpandMoreIcon />
+						</ExpandMore>
+					</CardActions>
+					<Collapse in={expanded} timeout="auto" unmountOnExit>
+						<CardContent>
+							<Typography variant="body1">Description:</Typography>
+							<br />
+							<Typography variant="body2" color="primary">
+								{item.details}
+							</Typography>
+						</CardContent>
+					</Collapse>
+				</Card>
+			</Box>
 		</div>
 	);
 };

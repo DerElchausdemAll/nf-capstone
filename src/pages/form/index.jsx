@@ -11,24 +11,20 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { useRouter } from "next/router";
 import useStore from "../../ions/hooks/storeFormData";
 import axios from "axios";
+import ImageUploader from "../imageuploader/index";
 
 const Items = () => {
-	// const itemCards = useStore(state => state.itemCards);
 	const setItemCards = useStore(state => state.setItemCards);
-	// const fetchData = useStore(state => state.fetchData);
+	const images = useStore(state => state.images);
 
 	const [title, setTitle] = useState("");
 	const [details, setDetails] = useState("");
 	const [postalCode, setPostalCode] = useState("");
-	const [image, setImage] = useState("");
+	const [category, setCategory] = useState("");
+
 	const [titleError, setTitleError] = useState(false);
 	const [detailsError, setDetailsError] = useState(false);
-	const [imageError, setImageError] = useState(false);
 	const [postalCodeError, setPostalCodeError] = useState(false);
-	const [emailAddress, setEmailAddress] = useState("");
-	const [emailAddressError, setEmailAddressError] = useState(false);
-
-	const [category, setCategory] = useState("");
 
 	const router = useRouter();
 
@@ -55,25 +51,16 @@ const Items = () => {
 			setDetailsError(true);
 		}
 
-		if (emailAddressError === "") {
-			setEmailAddressError(true);
-		}
-
 		if (postalCode === "") {
 			setPostalCodeError(true);
 		}
 
-		if (image === "") {
-			setImageError(true);
-		}
-
-		if (title && details && image) {
+		if (title && details && images) {
 			const inputForm = {
 				title,
 				details,
-				emailAddress,
 				postalCode,
-				image,
+				images,
 				category,
 				checked: false,
 			};
@@ -126,20 +113,6 @@ const Items = () => {
 					/>
 					<TextField
 						fullWidth
-						sx={{
-							marginTop: 5,
-							marginBottom: 5,
-							display: "block",
-						}}
-						variant="outlined"
-						color="secondary"
-						label="E-Mail"
-						name="emailAddress"
-						error={emailAddressError}
-						onChange={e => setEmailAddress(e.target.value)}
-					/>
-					<TextField
-						fullWidth
 						// required
 						sx={{
 							marginTop: 5,
@@ -153,20 +126,7 @@ const Items = () => {
 						error={postalCodeError}
 						onChange={e => setPostalCode(e.target.value)}
 					/>
-					<TextField
-						fullWidth
-						required
-						sx={{
-							marginTop: 5,
-							marginBottom: 5,
-							display: "block",
-						}}
-						variant="outlined"
-						color="secondary"
-						label="Image URL"
-						error={imageError}
-						onChange={e => setImage(e.target.value)}
-					/>
+					<ImageUploader />
 					<RadioGroup
 						value={category}
 						name="category"
