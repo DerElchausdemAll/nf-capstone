@@ -12,6 +12,7 @@ import ImageSlider from "../../molecules/imageslider/ImageSlider";
 const Details = ({ item }) => {
 	console.log(item);
 
+	// sda
 	// get userid from item
 	// find userby userid
 	// change email to users email
