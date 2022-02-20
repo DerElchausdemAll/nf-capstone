@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import styles from "./style.module.css";
 import { v4 as uuid } from "uuid";
+import { StyledArrowCircleLeftIcon, StyledArrowCircleRightIcon } from "./styled";
 
 const ImageSlider = ({ images }) => {
 	const [current, setCurrent] = useState(0);
@@ -30,8 +29,8 @@ const ImageSlider = ({ images }) => {
 
 	return (
 		<div className={styles.slider}>
-			<ArrowCircleLeftIcon className={styles.leftArrow} onClick={prevSlide} />
-			<ArrowCircleRightIcon className={styles.rightArrow} onClick={nextSlide} />
+			<StyledArrowCircleLeftIcon onClick={prevSlide} />
+			<StyledArrowCircleRightIcon onClick={nextSlide} />
 
 			{images.map((slide, index) => {
 				return (
