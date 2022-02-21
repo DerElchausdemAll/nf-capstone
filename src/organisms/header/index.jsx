@@ -2,6 +2,7 @@ import React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Button from "@mui/material/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { StyledImage } from "./styled";
 
 const Header = () => {
 	const { data: session } = useSession();
@@ -9,6 +10,7 @@ const Header = () => {
 		<header style={{ paddingBottom: "36px" }}>
 			<div
 				style={{
+					color: "red",
 					display: "flex",
 					justifyContent: "space-between",
 					flexDirection: "row",
@@ -34,7 +36,7 @@ const Header = () => {
 					<div
 						style={{
 							margin: "10px",
-							background: "red",
+							background: "orange",
 							borderRadius: "100%",
 							height: "36px",
 							width: "36px",
@@ -50,33 +52,31 @@ const Header = () => {
 							borderLeft: "25px solid transparent",
 							borderRight: "25px solid transparent",
 
-							borderBottom: "36px solid yellow",
+							borderBottom: "36px solid #02A676",
 							justifyContent: "space-between",
 							flexDirection: "row",
 						}}
 					></div>
 				</div>
-
 				<div>
 					{session ? (
-						<div>
+						<div style={{ display: "flex" }}>
 							<Button
 								variant="outlined"
-								size="large"
-								sx={{ height: "4rem" }}
+								sx={{ height: "3rem", margin: "10px" }}
 								onClick={() => {
 									signOut();
 								}}
 							>
 								Logout
 							</Button>{" "}
+							<StyledImage src={session.user.image} alt={session.user.name} />
 						</div>
 					) : (
 						<Button
 							startIcon={<GitHubIcon />}
 							variant="outlined"
-							size="large"
-							sx={{ height: "4rem" }}
+							sx={{ height: "3rem", margin: "10px" }}
 							onClick={() => {
 								signIn("github");
 							}}

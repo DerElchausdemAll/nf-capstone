@@ -75,15 +75,15 @@ const ItemsCard = ({ item, isMine }) => {
 						}
 						subheader={item.category}
 					/>
-					{/* {item.images ? ( */}
-					<CardMedia
-						sx={{ padding: "0.5rem" }}
-						component="img"
-						height="194"
-						image={item.images[0]}
-						alt={item.title}
-					/>
-					{/* ) : null} */}
+					{item.images ? (
+						<CardMedia
+							sx={{ padding: "0.5rem" }}
+							component="img"
+							height="194"
+							image={item.images[0]}
+							alt={item.title}
+						/>
+					) : null}
 
 					<CardActions disableSpacing>
 						{isMine && <DeleteIcon color="primary" onClick={handleDelete} />}

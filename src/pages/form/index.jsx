@@ -27,7 +27,7 @@ const Items = () => {
 
 	const router = useRouter();
 
-	const handleSubmit = e => {
+	const handleSubmit = async e => {
 		e.preventDefault();
 
 		const formData = new FormData(e.target);
@@ -61,9 +61,13 @@ const Items = () => {
 				category,
 				checked: false,
 			};
-			axios.post("/api/cards", inputForm).then(response => console.log(response));
+			try {
+				await axios.post("/api/cards", inputForm).then(response => console.log(response));
+				router.push("/items");
+			} catch (error) {
+				console.error(error);
+			}
 		}
-		router.push("/items");
 	};
 
 	return (

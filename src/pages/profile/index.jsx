@@ -45,13 +45,13 @@ const Profile = () => {
 					<Grid container spacing={3}>
 						{content?.map(item => (
 							<Grid key={item._id} item xs={12} sm={6} md={3}>
-								<ItemsCard item={item} />
+								<ItemsCard item={item} isMine={item.userId === session?.user.id} />
 							</Grid>
 						))}
 					</Grid>
 				</Container>
 			) : (
-				<Typography variant="h2">pls login</Typography>
+				<Typography variant="h6">pls login to see your items</Typography>
 			)}
 		</Layout>
 	);
