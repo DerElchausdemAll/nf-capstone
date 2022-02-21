@@ -22,17 +22,17 @@ const handler = async (request, response) => {
 		case "POST":
 			if (!session) {
 				response.status(401).send("Not authorized");
-			}
-			try {
-				console.log(request.body);
-				const mongoresponse = await Item.create({
-					...request.body,
-					userId: session.user.id,
-				});
-				response.status(201).json(mongoresponse);
-			} catch (err) {
-				console.log(err);
-			}
+			} else
+				try {
+					console.log(request.body);
+					const mongoresponse = await Item.create({
+						...request.body,
+						userId: session.user.id,
+					});
+					response.status(201).json(mongoresponse);
+				} catch (err) {
+					console.log(err);
+				}
 			break;
 
 		default:

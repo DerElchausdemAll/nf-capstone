@@ -2,24 +2,36 @@ import Head from "next/head";
 import React, { useState } from "react";
 import Layout from "../../organisms/layout";
 import axios from "axios";
-import { Image } from "cloudinary-react";
 import Button from "@mui/material/Button";
+import useStore from "../../ions/hooks/storeFormData";
 
-const Profile = () => {
-	const [imageSelected, setImageSelected] = useState("");
-	const [image, setImage] = useState(null);
+const ImageUploader = () => {
+	const [imageSelected, setImageSelected] = useState([]);
 
-	const uploadImage = () => {
-		const formData = new FormData();
-		formData.append("file", imageSelected);
-		formData.append("upload_preset", "q81vwnbw");
+	const url = "https://api.cloudinary.com/v1_1/dozopgbei/image/upload";
 
-		axios
-			.post("https://api.cloudinary.com/v1_1/dozopgbei/image/upload", formData)
-			.then(response => {
-				const imageId = response.data.public_id;
-				setImage(imageId);
-			});
+	const setImages = useStore(state => state.setImages);
+
+	const preset = "q81vwnbw";
+
+	const uploadImage = async () => {
+		const files = Array.from(imageSelected);
+
+		console.log(imageSelected);
+		const imageResponses = await Promise.all(
+			files.map(image => {
+				const formData = new FormData();
+				formData.append("file", image);
+				formData.append("upload_preset", preset);
+
+				return axios.post(url, formData);
+			})
+		);
+		const uploadedImages = imageResponses.map(response => {
+			return response.data.url;
+		});
+
+		setImages(uploadedImages);
 	};
 
 	return (
@@ -30,16 +42,22 @@ const Profile = () => {
 			</Head>
 			<div>
 				<input
+					multiple
 					type="file"
+					accept="image/*"
 					onChange={event => {
-						setImageSelected(event.target.files[0]);
+						setImageSelected(event.target.files);
 					}}
 				/>
-				<Button onClick={uploadImage}>Upload Image</Button>
-				<Image cloudName="dozopgbei" publicId={image} alt="" />
+				<br />
+				<br />
+
+				<Button variant="contained" onClick={uploadImage}>
+					Upload Image
+				</Button>
 			</div>
 		</Layout>
 	);
 };
 
-export default Profile;
+export default ImageUploader;

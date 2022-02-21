@@ -5,7 +5,7 @@ const Schema = new mongoose.Schema({
 	details: String,
 	userId: String,
 	postalCode: String,
-	image: String,
+	images: [String],
 	category: String,
 	checked: Boolean,
 });

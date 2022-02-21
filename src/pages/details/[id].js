@@ -1,14 +1,21 @@
 import Head from "next/head";
 import React from "react";
 import Layout from "../../organisms/layout";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import dbConnect from "../../ions/database/index";
 import Item from "../../ions/models/item.model";
+import ImageSlider from "../../molecules/imageslider/ImageSlider";
+// import axios from "axios";
 
 const Details = ({ item }) => {
 	console.log(item);
+
+	// sda
+	// get userid from item
+	// find userby userid
+	// change email to users email
 
 	return (
 		<Layout>
@@ -17,7 +24,8 @@ const Details = ({ item }) => {
 				<meta key="description" name="description" content="About" />
 			</Head>
 			<h1>{item.title}</h1>
-			<img width="400" height="500" src={item.image} alt={item.title} />
+			<ImageSlider images={item.images} />
+
 			<Typography variant="h4">Description</Typography>
 			<h4>{item.details}</h4>
 			<br />
@@ -25,11 +33,24 @@ const Details = ({ item }) => {
 			<Typography variant="h4">Contact the User</Typography>
 			<br />
 			<br />
-			<form
+			{/* funktioniert leider noch nicht */}
+			{/* <form
 				style={{ display: "flex", flexDirection: "column" }}
-				action="https://formsubmit.co/ad0e3f4cfb1c6c98b6cb45ba210dc2f8"
+				action="https://formsubmit.co/peter.jan@mail.de"
 				method="POST"
+				// onSubmit={async event => {
+				// 	event.preventDefault();
+				// 	const formData = new FormData(event.target);
+				// 	const formValues = Object.fromEntries(formData);
+				// 	try {
+				// 		const response = await axios.post(`/api/mailer/${item.userId}`, formValues);
+				// 		console.log("-------->", response);
+				// 	} catch (err) {
+				// 		console.error(err);
+				// 	}
+				// }}
 			>
+				<input type="hidden" name="_captcha" value="false" />
 				<TextField required type="email" name="email" placeholder="Enter your Email here" />
 				<TextField
 					required
@@ -43,7 +64,7 @@ const Details = ({ item }) => {
 				<Button color="primary" variant="contained" type="submit">
 					Send
 				</Button>
-			</form>
+			</form> */}
 		</Layout>
 	);
 };

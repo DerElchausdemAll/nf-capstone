@@ -16,7 +16,7 @@ const handler = async (request, response) => {
 				if (item) {
 					response.status(200).json(item);
 				}
-				response.status(200).json({ success: true, data: item });
+				response.status(404).send("item not found");
 			} catch (error) {
 				response.status(400).json({ success: false });
 			}

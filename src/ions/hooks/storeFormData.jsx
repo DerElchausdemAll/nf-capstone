@@ -5,6 +5,8 @@ const useStore = create(set => {
 	return {
 		itemCards: [],
 		setItemCards: items => set(state => ({ itemCards: [...state.itemCards, { ...items }] })),
+		images: [],
+		setImages: uploadedImages => set({ images: uploadedImages }),
 		fetchData: async () => {
 			console.log("attempting to fetch");
 			const response = await axios.get("/api/cards");

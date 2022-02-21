@@ -5,13 +5,9 @@ import Items from "../../molecules/items/Items";
 import useStore from "../../ions/hooks/storeFormData";
 
 const Page = () => {
-	const fetchData = useStore(state => state.fetchData);
-	const updateData = useStore(state => state.updateData);
-	const deleteData = useStore(state => state.deleteData);
-
 	useEffect(() => {
-		fetchData();
-	}, [updateData, deleteData]);
+		useStore.getState().fetchData();
+	}, []);
 
 	return (
 		<Layout>
