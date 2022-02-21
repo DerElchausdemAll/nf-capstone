@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
-	StyledArrowCircleLeftIcon,
-	StyledArrowCircleRightIcon,
+	StyledArrowBackIosNewIcon,
+	StyledArrowForwardIosIcon,
 	StyledSlider,
 	StyledImage,
 } from "./styled";
@@ -25,13 +25,17 @@ const ImageSlider = ({ images }) => {
 	}
 
 	if (images.length === 1) {
-		return <StyledImage src={images} />;
+		return (
+			<StyledSlider>
+				<StyledImage src={images} />
+			</StyledSlider>
+		);
 	}
 
 	return (
 		<StyledSlider>
-			<StyledArrowCircleLeftIcon onClick={prevSlide} />
-			<StyledArrowCircleRightIcon onClick={nextSlide} />
+			<StyledArrowBackIosNewIcon fontSize="large" onClick={prevSlide} />
+			<StyledArrowForwardIosIcon fontSize="large" onClick={nextSlide} />
 
 			{images.map((slide, index) => {
 				return (

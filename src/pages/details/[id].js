@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import Layout from "../../organisms/layout";
-// import Button from "@mui/material/Button";
-// import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import dbConnect from "../../ions/database/index";
 import Item from "../../ions/models/item.model";
@@ -23,48 +23,71 @@ const Details = ({ item }) => {
 				<title key="title">About</title>
 				<meta key="description" name="description" content="About" />
 			</Head>
-			<h1>{item.title}</h1>
-			<ImageSlider images={item.images} />
-
-			<Typography variant="h4">Description</Typography>
-			<h4>{item.details}</h4>
-			<br />
-			<br />
-			<Typography variant="h4">Contact the User</Typography>
-			<br />
-			<br />
-			{/* funktioniert leider noch nicht */}
-			{/* <form
-				style={{ display: "flex", flexDirection: "column" }}
-				action="https://formsubmit.co/peter.jan@mail.de"
-				method="POST"
-				// onSubmit={async event => {
-				// 	event.preventDefault();
-				// 	const formData = new FormData(event.target);
-				// 	const formValues = Object.fromEntries(formData);
-				// 	try {
-				// 		const response = await axios.post(`/api/mailer/${item.userId}`, formValues);
-				// 		console.log("-------->", response);
-				// 	} catch (err) {
-				// 		console.error(err);
-				// 	}
-				// }}
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+				}}
 			>
-				<input type="hidden" name="_captcha" value="false" />
-				<TextField required type="email" name="email" placeholder="Enter your Email here" />
-				<TextField
-					required
-					multiline
-					type="text"
-					name="name"
-					rows={6}
-					placeholder="Enter your message here"
-				/>
-				<TextField type="hidden" name="_next" value="/details/" />
-				<Button color="primary" variant="contained" type="submit">
-					Send
-				</Button>
-			</form> */}
+				<Typography variant="h2" color="primary" sx={{ paddingBottom: "2rem" }}>
+					{item.title}
+				</Typography>
+				<ImageSlider images={item.images} />
+
+				<Typography
+					sx={{ paddingTop: "2rem", paddingBottom: "1rem" }}
+					color="primary"
+					variant="h4"
+				>
+					Description
+				</Typography>
+				<Typography variant="h6" color="black" sx={{ paddingBottom: "2rem" }}>
+					{item.details}
+				</Typography>
+				<br />
+				<br />
+				<Typography variant="h5">Contact</Typography>
+				<br />
+				<br />
+				{/* funktioniert leider noch nicht */}
+				<form
+					style={{ display: "flex", flexDirection: "column" }}
+					action="https://formsubmit.co/peter.jan@mail.de"
+					method="POST"
+					// onSubmit={async event => {
+					// 	event.preventDefault();
+					// 	const formData = new FormData(event.target);
+					// 	const formValues = Object.fromEntries(formData);
+					// 	try {
+					// 		const response = await axios.post(`/api/mailer/${item.userId}`, formValues);
+					// 		console.log("-------->", response);
+					// 	} catch (err) {
+					// 		console.error(err);
+					// 	}
+					// }}
+				>
+					<input type="hidden" name="_captcha" value="false" />
+					<TextField
+						required
+						type="email"
+						name="email"
+						placeholder="Enter your Email here"
+					/>
+					<TextField
+						required
+						multiline
+						type="text"
+						name="name"
+						rows={6}
+						placeholder="Enter your message here"
+					/>
+					<TextField type="hidden" name="_next" value="/details/" />
+					<Button color="primary" variant="contained" type="submit">
+						Send
+					</Button>
+				</form>
+			</div>
 		</Layout>
 	);
 };

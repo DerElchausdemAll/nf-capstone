@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-export const StyledArrowCircleLeftIcon = styled(ArrowCircleLeftIcon)`
+export const StyledArrowBackIosNewIcon = styled(ArrowBackIosNewIcon)`
 	position: absolute;
 	z-index: 10;
 	top: 50%;
@@ -14,9 +14,8 @@ export const StyledArrowCircleLeftIcon = styled(ArrowCircleLeftIcon)`
 `;
 
 export const StyledImage = styled.img`
-	width: 300px;
-	height: 300px;
-	border-radius: 10px;
+	width: 428px;
+	height: 428px;
 `;
 
 export const StyledSlider = styled.div`
@@ -26,7 +25,7 @@ export const StyledSlider = styled.div`
 	justify-content: center;
 `;
 
-export const StyledArrowCircleRightIcon = styled(ArrowCircleRightIcon)`
+export const StyledArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
 	position: absolute;
 	z-index: 10;
 	top: 50%;
