@@ -8,7 +8,7 @@ export const move = keyframes`
 	transform: translateX(100vw);
 	}
 	100% {
-	transform: translateX(0vw);
+	transform: translateX(0);
 	}
 `;
 
@@ -17,7 +17,7 @@ export const moveHeadline = keyframes`
 	transform: translateX(-100vw);
 	}
 	100% {
-	transform: translateX(0vw);
+	transform: translateX(0);
 	}
 `;
 
