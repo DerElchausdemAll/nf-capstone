@@ -43,9 +43,12 @@ export const StyledHeadline = styled(Typography)`
 
 export const StyledButton = styled(Button)`
 	grid-area: button;
-	margin-bottom: 60px;
 	height: 60px;
+	margin-bottom: 60px;
 	transform: translateX(-100vw);
+	animation: ${moveHeadline} 0.7s ease-out forwards;
+
+	/* 0.7s hinter 0.7s für delay */
+
 	font-size: 20px;
-	animation: ${moveHeadline} 0.7s ease-out forwards; /* 0.7s hinter 0.7s für delay */
 `;
