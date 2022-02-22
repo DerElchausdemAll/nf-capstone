@@ -15,47 +15,46 @@ const spinning = keyframes`
 
 export const StyledInnerBall = styled.div`
 	position: absolute;
-	width: 36px;
-	height: 36px;
 	top: 90px;
 	left: 5px;
+	width: 36px;
+	height: 36px;
 	border-radius: 100%;
 	background: #ff831a;
 `;
 
 export const StyledBall = styled.div`
+	position: relative;
 	left: 35%;
-	margin: 10px;
 	width: 100px;
 	height: 100px;
-	border-radius: 50%;
-	position: relative;
-	background: white;
+	margin: 10px;
 	animation: ${spinning} 2s linear infinite;
+	border-radius: 50%;
+	background: white;
 
 	/* ${spinning} */
 
 	&::after {
 		content: "";
-		height: 20px;
-		width: 0;
-		height: 0;
-		border-left: 25px solid transparent;
-		border-right: 25px solid transparent;
-		border-bottom: 36px solid #02a676;
 		position: absolute;
 		top: px;
 		left: -10px;
+		width: 0;
+		height: 20px;
+		border-right: 25px solid transparent;
+		border-bottom: 36px solid #02a676;
+		border-left: 25px solid transparent;
 	}
 
 	&::before {
 		content: "";
+		position: absolute;
+		top: 35px;
+		left: 70px;
 		width: 36px;
 		height: 36px;
 		margin: 10px;
 		background: #c00000;
-		position: absolute;
-		top: 35px;
-		left: 70px;
 	}
 `;
