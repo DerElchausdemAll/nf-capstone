@@ -8,37 +8,38 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledTriangle = styled.div`
-	margin: 10px;
 	width: 0;
+	margin: 10px;
 	height: 0;
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-bottom: 36px solid #02a676;
-	justify-content: space-between;
 	flex-direction: row;
+	justify-content: space-between;
+	border-right: 25px solid transparent;
+	border-left: 25px solid transparent;
+	border-bottom: 36px solid #02a676;
 `;
 
 export const StyledBall = styled.div`
 	margin: 10px;
-	background: #ff831a;
-	border-radius: 100%;
-	height: 36px;
-	width: 36px;
-	justify-content: space-between;
 	flex-direction: row;
+	justify-content: space-between;
+	width: 36px;
+	height: 36px;
+	border-radius: 100%;
+	background: #ff831a;
 `;
 
 export const StyledContainer = styled.div`
-	color: white;
 	display: flex;
-	justify-content: space-between;
+	color: white;
 	flex-direction: row;
-	background: white;
-	width: 100vw;
-	z-index: 300;
+	justify-content: space-between;
 	position: fixed;
+	z-index: 300;
+	width: 100vw;
+	background: white;
 	top: 0;
 	left: 0;
+
 	/* border-bottom: 1.5px solid #02a676; */
 `;
 
@@ -46,7 +47,7 @@ export const StyledSquare = styled.div`
 	width: 36px;
 	height: 36px;
 	margin: 10px;
-	background: #c00000;
-	justify-content: space-between;
 	flex-direction: row;
+	justify-content: space-between;
+	background: #c00000;
 `;

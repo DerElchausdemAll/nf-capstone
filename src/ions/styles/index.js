@@ -8,17 +8,17 @@ export const globalStyle = css`
 	}
 
 	html {
-		font-size: 16px;
 		height: 100%;
+		font-size: 16px;
 	}
 
 	body {
 		margin: 0;
-		font-size: 1rem;
+		display: flex;
 		height: 100%;
+		font-size: 1rem;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
-		display: flex;
 		flex-direction: column;
 	}
 
