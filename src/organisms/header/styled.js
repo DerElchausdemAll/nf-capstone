@@ -37,17 +37,17 @@ export const StyledContainer = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100vw;
-	color: white;
 	background: white;
+	color: white;
 
 	/* border-bottom: 1.5px solid #02a676; */
 `;
 
 export const StyledSquare = styled.div`
-	width: 36px;
-	height: 36px;
 	flex-direction: row;
 	justify-content: space-between;
+	width: 36px;
+	height: 36px;
 	margin: 10px;
 	background: #c00000;
 `;
