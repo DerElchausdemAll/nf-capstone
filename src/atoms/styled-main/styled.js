@@ -35,17 +35,17 @@ export const StyledText = styled(Typography)`
 `;
 
 export const StyledHeadline = styled(Typography)`
-	margin-left: 20px;
 	grid-area: headline;
+	margin-left: 20px;
 	animation: ${moveHeadline} 0.7s ease-out;
 	font-weight: 800;
 `;
 
 export const StyledButton = styled(Button)`
-	margin-bottom: 60px;
 	grid-area: button;
+	margin-bottom: 60px;
 	height: 60px;
-	font-size: 20px;
 	transform: translateX(-100vw);
+	font-size: 20px;
 	animation: ${moveHeadline} 0.7s ease-out forwards; /* 0.7s hinter 0.7s für delay */
 `;
