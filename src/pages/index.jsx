@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React from "react";
-import Button from "@mui/material/Button";
 import Layout from "../organisms/layout-main";
 import { useSession } from "next-auth/react";
 import { StyledText, StyledHeadline, StyledButton } from "../atoms/styled-main/styled";

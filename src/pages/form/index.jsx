@@ -77,7 +77,7 @@ const Items = () => {
 				<title key="title">Form</title>
 				<meta key="description" name="description" content="Form" />
 			</Head>
-			<LoadingAnimation></LoadingAnimation>
+			<LoadingAnimation />
 			<Container>
 				<form noValidate autoComplete="off" onSubmit={e => handleSubmit(e)}>
 					<Typography variant="h3" color="primary">
