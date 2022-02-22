@@ -14,8 +14,8 @@ export const StyledTriangle = styled.div`
 	height: 0;
 	margin: 10px;
 	border-right: 25px solid transparent;
-	border-left: 25px solid transparent;
 	border-bottom: 36px solid #02a676;
+	border-left: 25px solid transparent;
 `;
 
 export const StyledBall = styled.div`
@@ -31,14 +31,14 @@ export const StyledBall = styled.div`
 export const StyledContainer = styled.div`
 	display: flex;
 	position: fixed;
+	z-index: 300;
+	top: 0;
+	left: 0;
 	flex-direction: row;
 	justify-content: space-between;
 	color: white;
-	z-index: 300;
 	width: 100vw;
 	background: white;
-	top: 0;
-	left: 0;
 
 	/* border-bottom: 1.5px solid #02a676; */
 `;
