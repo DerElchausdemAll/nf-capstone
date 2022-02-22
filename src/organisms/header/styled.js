@@ -36,8 +36,8 @@ export const StyledContainer = styled.div`
 	left: 0;
 	flex-direction: row;
 	justify-content: space-between;
-	color: white;
 	width: 100vw;
+	color: white;
 	background: white;
 
 	/* border-bottom: 1.5px solid #02a676; */
@@ -46,8 +46,8 @@ export const StyledContainer = styled.div`
 export const StyledSquare = styled.div`
 	width: 36px;
 	height: 36px;
-	margin: 10px;
 	flex-direction: row;
 	justify-content: space-between;
+	margin: 10px;
 	background: #c00000;
 `;
