@@ -14,13 +14,13 @@ const spinning = keyframes`
 `;
 
 export const StyledInnerBall = styled.div`
-	background: #ff831a;
-	border-radius: 100%;
-	height: 36px;
-	width: 36px;
 	position: absolute;
+	width: 36px;
+	height: 36px;
 	top: 90px;
 	left: 5px;
+	border-radius: 100%;
+	background: #ff831a;
 `;
 
 export const StyledBall = styled.div`
