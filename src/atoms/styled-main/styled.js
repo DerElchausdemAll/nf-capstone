@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 
 export const move = keyframes`
 	0% {
-	transform: translateX(1000px);
+	transform: translateX(50px);
 
 	}
 	100% {
@@ -15,7 +15,7 @@ export const move = keyframes`
 
 export const moveHeadline = keyframes`
 	0% {
-	transform: translateX(-1000px);
+	transform: translateX(-50px);
 
 	}
 	100% {

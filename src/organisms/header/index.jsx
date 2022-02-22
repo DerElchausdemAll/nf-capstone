@@ -7,7 +7,7 @@ import { StyledImage, StyledTriangle, StyledBall, StyledSquare, StyledContainer 
 const Header = () => {
 	const { data: session } = useSession();
 	return (
-		<header style={{ paddingBottom: "36px" }}>
+		<header>
 			<StyledContainer>
 				<div style={{ display: "flex" }}>
 					<StyledSquare />

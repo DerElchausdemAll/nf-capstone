@@ -1,8 +1,12 @@
 import React from "react";
-import { StyledBall } from "./styled";
+import { StyledBall, StyledInnerBall } from "./styled";
 
 const LoadingAnimation = () => {
-	return <StyledBall></StyledBall>;
+	return (
+		<StyledBall>
+			<StyledInnerBall></StyledInnerBall>
+		</StyledBall>
+	);
 };
 
 export default LoadingAnimation;

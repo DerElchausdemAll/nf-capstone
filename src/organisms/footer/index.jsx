@@ -13,14 +13,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
-				<BottomNavigation
-					// showLabels
-					// value={value}
-					// onChange={(event, newValue) => {
-					// 	setValue(newValue);
-					// }}
-					sx={{ background: "#02A676" }}
-				>
+				<BottomNavigation sx={{ background: "#02A676" }}>
 					<BottomNavigationAction
 						label="Home"
 						icon={<HomeIcon fontSize="large" sx={{ color: "white" }} />}

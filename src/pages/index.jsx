@@ -15,8 +15,6 @@ const Page = () => {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<div>
-				<br />
-				<br />
 				<div style={{ display: "flex", justifyContent: "center" }}>
 					<StyledHeadline variant="h1" color="white">
 						TOY CYCLE
@@ -37,17 +35,15 @@ const Page = () => {
 				<StyledText variant="h3" color="white">
 					Story
 				</StyledText>
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
 				{session ? (
 					<div>
-						<div style={{ display: "flex", justifyContent: "center" }}>
+						<div
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								marginTop: "100px",
+							}}
+						>
 							<StyledButton variant="contained" href="/form">
 								Add an Item
 							</StyledButton>
@@ -56,11 +52,6 @@ const Page = () => {
 				) : (
 					<div />
 				)}
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
 			</div>
 		</Layout>
 	);
