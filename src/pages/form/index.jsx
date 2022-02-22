@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import useStore from "../../ions/hooks/storeFormData";
 import axios from "axios";
 import ImageUploader from "../imageuploader/index";
+import LoadingAnimation from "../../molecules/loading-animation/LoadingAnimation";
 
 const Items = () => {
 	const setItemCards = useStore(state => state.setItemCards);
@@ -76,6 +77,7 @@ const Items = () => {
 				<title key="title">Form</title>
 				<meta key="description" name="description" content="Form" />
 			</Head>
+			<LoadingAnimation></LoadingAnimation>
 			<Container>
 				<form noValidate autoComplete="off" onSubmit={e => handleSubmit(e)}>
 					<Typography variant="h3" color="primary">

@@ -3,6 +3,8 @@ import axios from "axios";
 
 const useStore = create(set => {
 	return {
+		// isLoading: true (default)
+		// oder man fragt auf der jeweiligen Seite nach itemCards.length === 0 ? dann isLoading sonst
 		itemCards: [],
 		setItemCards: items => set(state => ({ itemCards: [...state.itemCards, { ...items }] })),
 		images: [],
@@ -13,6 +15,7 @@ const useStore = create(set => {
 			const result = response.data;
 
 			set(() => ({ itemCards: result }));
+			// set isLoading auf false
 		},
 		updateData: async (_id, item) => {
 			console.log("updating database");

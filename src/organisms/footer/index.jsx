@@ -11,7 +11,7 @@ const Footer = () => {
 	// const [value, setValue] = React.useState(0);
 
 	return (
-		<footer style={{ paddingTop: "100px" }}>
+		<footer>
 			<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
 				<BottomNavigation
 					// showLabels
