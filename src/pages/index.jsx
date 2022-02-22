@@ -1,8 +1,13 @@
 import Head from "next/head";
 import React from "react";
 import Layout from "../organisms/layout-main";
-import { useSession } from "next-auth/react";
-import { StyledText, StyledHeadline, StyledButton } from "../atoms/styled-main/styled";
+import { useSession, getSession } from "next-auth/react";
+import {
+	StyledText,
+	StyledHeadline,
+	StyledButton,
+	StyledAnimationFixer,
+} from "../atoms/styled-main/styled";
 
 const Page = () => {
 	const { data: session } = useSession();
@@ -13,47 +18,35 @@ const Page = () => {
 				<title key="title">My Project</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<div>
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					<StyledHeadline variant="h1" color="white">
-						TOY CYCLE
-					</StyledHeadline>
-				</div>
-				<StyledText variant="h3" color="white">
-					Give
+
+			<StyledHeadline variant="h2" color="white">
+				TOY CYCLE
+			</StyledHeadline>
+
+			<StyledAnimationFixer>
+				<StyledText variant="h4" color="white">
+					<div>Give</div>
+					<div> your</div>
+					<div> Toys</div>
+					<div> a new</div>
+					<div> Story</div>
 				</StyledText>
-				<StyledText variant="h3" color="white">
-					your
-				</StyledText>
-				<StyledText variant="h3" color="white">
-					Toys
-				</StyledText>
-				<StyledText variant="h3" color="white">
-					a new
-				</StyledText>
-				<StyledText variant="h3" color="white">
-					Story
-				</StyledText>
-				{session ? (
-					<div>
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "center",
-								marginTop: "100px",
-							}}
-						>
-							<StyledButton variant="contained" href="/form">
-								Add an Item
-							</StyledButton>
-						</div>
-					</div>
-				) : (
-					<div />
-				)}
-			</div>
+			</StyledAnimationFixer>
+			{session && (
+				<StyledButton variant="contained" href="/form">
+					Start
+				</StyledButton>
+			)}
 		</Layout>
 	);
 };
 
 export default Page;
+
+export const getServerSideProps = async context => {
+	return {
+		props: {
+			session: await getSession(context),
+		},
+	};
+};

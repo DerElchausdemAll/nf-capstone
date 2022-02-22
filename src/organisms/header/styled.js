@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { css, cx } from "@emotion/css";
 
 export const StyledImage = styled.img`
-	width: 44px;
+	width: 36px;
 	margin: 10px;
 	border-radius: 50%;
 `;
@@ -39,6 +39,7 @@ export const StyledContainer = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
+	/* border-bottom: 1.5px solid #02a676; */
 `;
 
 export const StyledSquare = styled.div`
@@ -48,9 +49,4 @@ export const StyledSquare = styled.div`
 	background: #c00000;
 	justify-content: space-between;
 	flex-direction: row;
-	::after {
-		height: 30px;
-		width: 30px;
-		background: green;
-	}
 `;

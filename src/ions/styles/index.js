@@ -9,10 +9,20 @@ export const globalStyle = css`
 
 	html {
 		font-size: 16px;
+		height: 100%;
 	}
 
 	body {
 		margin: 0;
 		font-size: 1rem;
+		height: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#__next {
+		display: contents;
 	}
 `;

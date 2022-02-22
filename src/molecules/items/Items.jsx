@@ -6,6 +6,8 @@ import useStore from "../../ions/hooks/storeFormData";
 import Button from "@mui/material/Button";
 import TemporaryDrawer from "../filterbar/TemporaryDrawer";
 import { useSession } from "next-auth/react";
+import { FILTER_BUTTON_WIDTH } from "../../ions/constants";
+import Box from "@mui/material/Box";
 
 const Items = () => {
 	const itemCards = useStore(state => state.itemCards);
@@ -20,21 +22,27 @@ const Items = () => {
 
 	return (
 		<div>
-			<div
-				style={{
+			<Box
+				sx={{
 					display: "flex",
 					justifyContent: "space-between",
-					margin: "15px",
+					mt: 9,
+					mb: 2,
+					mx: 2,
 				}}
 			>
-				<TemporaryDrawer>sadasd</TemporaryDrawer>
+				<TemporaryDrawer />
 
-				<Button variant="contained" onClick={handleBookmark} style={{ width: "120px" }}>
+				<Button
+					variant="contained"
+					onClick={handleBookmark}
+					style={{ width: FILTER_BUTTON_WIDTH }}
+				>
 					{!bookmark ? "Show All" : "Favorites"}
 				</Button>
-			</div>
+			</Box>
 			<Container>
-				<Grid container spacing={0.5} sx={{ paddingBottom: "150px" }}>
+				<Grid container spacing={0.5} sx={{ pb: 2 }}>
 					{(bookmark ? itemCards : favorites).map(item => (
 						<Grid item key={item._id} xs={12} sm={6} md={3}>
 							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
