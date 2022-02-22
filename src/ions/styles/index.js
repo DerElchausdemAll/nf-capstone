@@ -15,9 +15,9 @@ export const globalStyle = css`
 	body {
 		display: flex;
 		flex-direction: column;
-		overflow: auto;
-		margin: 0;
 		height: 100%;
+		margin: 0;
+		overflow: auto;
 		font-size: 1rem;
 		-webkit-overflow-scrolling: touch;
 	}
