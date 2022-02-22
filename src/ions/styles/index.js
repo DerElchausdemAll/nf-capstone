@@ -13,13 +13,13 @@ export const globalStyle = css`
 	}
 
 	body {
-		margin: 0;
 		display: flex;
+		flex-direction: column;
+		overflow: auto;
+		margin: 0;
 		height: 100%;
 		font-size: 1rem;
-		overflow: auto;
 		-webkit-overflow-scrolling: touch;
-		flex-direction: column;
 	}
 
 	#__next {
