@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
+import { FILTER_BUTTON_WIDTH } from "../../ions/constants";
 
 export default function TemporaryDrawer() {
 	const [state, setState] = React.useState({
@@ -52,7 +53,7 @@ export default function TemporaryDrawer() {
 				<React.Fragment key={anchor}>
 					<Button
 						variant="contained"
-						style={{ width: "120px" }}
+						style={{ width: FILTER_BUTTON_WIDTH }}
 						onClick={toggleDrawer(anchor, true)}
 					>
 						Filter

@@ -3,7 +3,7 @@ import Layout from "../../organisms/layout";
 import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -76,7 +76,15 @@ const Items = () => {
 				<title key="title">Form</title>
 				<meta key="description" name="description" content="Form" />
 			</Head>
-			<Container>
+			<Box
+				sx={{
+					display: "flex",
+					justifyContent: "space-between",
+					mt: 9,
+					mb: 2,
+					mx: 2,
+				}}
+			>
 				<form noValidate autoComplete="off" onSubmit={e => handleSubmit(e)}>
 					<Typography variant="h3" color="primary">
 						Add an Item
@@ -89,7 +97,7 @@ const Items = () => {
 							display: "block",
 						}}
 						variant="outlined"
-						color="secondary"
+						color="primary"
 						label="Title"
 						name="title"
 						error={titleError}
@@ -105,7 +113,7 @@ const Items = () => {
 							display: "block",
 						}}
 						variant="outlined"
-						color="secondary"
+						color="primary"
 						label="Description"
 						name="description"
 						rows={6}
@@ -121,7 +129,7 @@ const Items = () => {
 							display: "block",
 						}}
 						variant="outlined"
-						color="secondary"
+						color="primary"
 						label="Postal Code"
 						name="postalCode"
 						error={postalCodeError}
@@ -140,11 +148,11 @@ const Items = () => {
 						<FormControlLabel value="outdoor" control={<Radio />} label="Outdoor" />
 						<FormControlLabel value="others" control={<Radio />} label="Others" />
 					</RadioGroup>
-					<Button type="submit" color="secondary" variant="contained">
+					<Button type="submit" color="primary" variant="contained">
 						Submit
 					</Button>
 				</form>
-			</Container>
+			</Box>
 		</Layout>
 	);
 };
