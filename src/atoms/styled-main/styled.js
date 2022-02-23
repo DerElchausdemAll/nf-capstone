@@ -30,7 +30,15 @@ export const StyledText = styled(Typography)`
 	margin-left: 20px;
 	animation: ${move} 0.7s ease-out;
 	font-weight: 800;
-	text-decoration: underline #0059c3 7px solid;
+	text-decoration: underline;
+	-webkit-text-decoration: underline;
+	text-decoration-color: #1976d2;
+	-webkit-text-decoration-color: #1976d2;
+	text-decoration-thickness: 7px;
+	-webkit-text-decoration-thickness: 7px;
+	text-decoration-style: solid;
+	-webkit-text-decoration-style: solid;
+
 	text-transform: uppercase;
 `;
 
@@ -44,7 +52,7 @@ export const StyledHeadline = styled(Typography)`
 export const StyledButton = styled(Button)`
 	grid-area: button;
 	height: 60px;
-	margin-bottom: 60px;
+	margin-bottom: -10px;
 	transform: translateX(-100vw);
 	animation: ${moveHeadline} 0.7s ease-out forwards;
 
