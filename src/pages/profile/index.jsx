@@ -10,6 +10,11 @@ import ItemsCard from "../../organisms/card/Card";
 import Typography from "@mui/material/Typography";
 import { StyledImage } from "../../atoms/styled-image/styled";
 import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import styled from "@emotion/styled";
 
 const Profile = () => {
 	const { data: session } = useSession();
@@ -26,6 +31,10 @@ const Profile = () => {
 			fetchItem();
 		}
 	}, [session]);
+
+	const Input = styled("input")({
+		display: "none",
+	});
 
 	return (
 		<Layout>
@@ -44,14 +53,40 @@ const Profile = () => {
 			>
 				{session ? (
 					<Container>
-						<Typography variant="h4">{session.user.name}</Typography>
-						<StyledImage src={session.user.image} alt={session.user.name} />
+						<Typography variant="h4" color="primary">
+							{session.user.name}
+						</Typography>
 						<br />
+						<div>
+							<StyledImage src={session.user.image} alt={session.user.name} />
+							<label
+								htmlFor="icon-button-file"
+								style={{ marginBottom: "20px", marginLeft: "-30px" }}
+							>
+								<Input
+									multiple
+									accept="image/*"
+									id="icon-button-file"
+									type="file"
+									onChange={event => {
+										setImageSelected(event.target.files);
+									}}
+								/>
+								<IconButton
+									color="primary"
+									aria-label="upload picture"
+									component="span"
+								>
+									<PhotoCamera />
+								</IconButton>
+							</label>
+						</div>
 						<br />
+						<Divider />
+						<Typography variant="h6">Stored Toys: {content.length}</Typography>
+						<Divider />
 						<br />
-						<Typography variant="h4">Your stored Items</Typography>
-
-						<Grid container spacing={3}>
+						<Grid container spacing={0.5}>
 							{content?.map(item => (
 								<Grid key={item._id} item xs={12} sm={6} md={3}>
 									<ItemsCard

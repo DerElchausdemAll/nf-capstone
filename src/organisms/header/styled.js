@@ -46,8 +46,8 @@ export const StyledTriangle = styled.div`
 `;
 
 export const StyledImage = styled.img`
-	width: 36px;
-	height: 36px;
+	width: 44px;
+	height: 44px;
 	margin: 10px;
 	border-radius: 50%;
 `;

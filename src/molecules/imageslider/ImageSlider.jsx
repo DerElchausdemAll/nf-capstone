@@ -27,7 +27,7 @@ const ImageSlider = ({ images }) => {
 	if (images.length === 1) {
 		return (
 			<StyledSlider>
-				<StyledImage src={images} />
+				<StyledImage src={images[0]} />
 			</StyledSlider>
 		);
 	}

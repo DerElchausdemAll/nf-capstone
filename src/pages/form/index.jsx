@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -85,73 +86,83 @@ const Items = () => {
 					mx: 2,
 				}}
 			>
-				<form noValidate autoComplete="off" onSubmit={e => handleSubmit(e)}>
-					<Typography variant="h3" color="primary">
-						Add an Item
-					</Typography>
-					<TextField
-						fullWidth
-						required
-						sx={{
-							marginTop: 5,
-							display: "block",
-						}}
-						variant="outlined"
-						color="primary"
-						label="Title"
-						name="title"
-						error={titleError}
-						onChange={e => setTitle(e.target.value)}
-					/>
-					<TextField
-						multiline
-						fullWidth
-						required
-						sx={{
-							marginTop: 5,
-							marginBottom: 5,
-							display: "block",
-						}}
-						variant="outlined"
-						color="primary"
-						label="Description"
-						name="description"
-						rows={6}
-						error={detailsError}
-						onChange={e => setDetails(e.target.value)}
-					/>
-					<TextField
-						fullWidth
-						// required
-						sx={{
-							marginTop: 5,
-							marginBottom: 5,
-							display: "block",
-						}}
-						variant="outlined"
-						color="primary"
-						label="Postal Code"
-						name="postalCode"
-						error={postalCodeError}
-						onChange={e => setPostalCode(e.target.value)}
-					/>
-					<ImageUploader />
-					<RadioGroup
-						value={category}
-						name="category"
-						onChange={e => setCategory(e.target.value)}
-					>
-						<FormControlLabel value="playmobil" control={<Radio />} label="Playmobil" />
-						<FormControlLabel value="wood" control={<Radio />} label="Wooden Toys" />
-						<FormControlLabel value="lego" control={<Radio />} label="Lego" />
-						<FormControlLabel value="cars" control={<Radio />} label="Cars" />
-						<FormControlLabel value="outdoor" control={<Radio />} label="Outdoor" />
-						<FormControlLabel value="others" control={<Radio />} label="Others" />
-					</RadioGroup>
-					<Button type="submit" color="primary" variant="contained">
-						Submit
-					</Button>
-				</form>
+				<Container>
+					<form noValidate autoComplete="off" onSubmit={e => handleSubmit(e)}>
+						<Typography variant="h4" color="primary">
+							Add a Toy
+						</Typography>
+						<TextField
+							fullWidth
+							required
+							sx={{
+								marginTop: 5,
+								display: "block",
+							}}
+							variant="outlined"
+							color="primary"
+							label="Title"
+							name="title"
+							error={titleError}
+							onChange={e => setTitle(e.target.value)}
+						/>
+						<TextField
+							multiline
+							fullWidth
+							required
+							sx={{
+								marginTop: 5,
+								marginBottom: 5,
+								display: "block",
+							}}
+							variant="outlined"
+							color="primary"
+							label="Description"
+							name="description"
+							rows={6}
+							error={detailsError}
+							onChange={e => setDetails(e.target.value)}
+						/>
+						<TextField
+							fullWidth
+							// required
+							sx={{
+								marginTop: 5,
+								marginBottom: 5,
+								display: "block",
+							}}
+							variant="outlined"
+							color="primary"
+							label="Postal Code"
+							name="postalCode"
+							error={postalCodeError}
+							onChange={e => setPostalCode(e.target.value)}
+						/>
+						<ImageUploader />
+						<RadioGroup
+							value={category}
+							name="category"
+							onChange={e => setCategory(e.target.value)}
+						>
+							<FormControlLabel
+								value="playmobil"
+								control={<Radio />}
+								label="Playmobil"
+							/>
+							<FormControlLabel
+								value="wood"
+								control={<Radio />}
+								label="Wooden Toys"
+							/>
+							<FormControlLabel value="lego" control={<Radio />} label="Lego" />
+							<FormControlLabel value="cars" control={<Radio />} label="Cars" />
+							<FormControlLabel value="outdoor" control={<Radio />} label="Outdoor" />
+							<FormControlLabel value="others" control={<Radio />} label="Others" />
+						</RadioGroup>
+						<Button type="submit" color="primary" variant="contained">
+							Submit
+						</Button>
+					</form>
+				</Container>
 			</Box>
 		</Layout>
 	);

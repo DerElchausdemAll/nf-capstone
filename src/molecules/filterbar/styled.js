@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
+	font-size: 16px;
 	&:hover {
-		background: #ff831a;
+		/* opacity: 30%; */
 	}
 `;

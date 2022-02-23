@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import { FILTER_BUTTON_WIDTH } from "../../ions/constants";
 import Stack from "@mui/material/Stack";
 import { StyledButton } from "./styled";
+import Divider from "@mui/material/Divider";
+import LoadingAnimation from "../loading-animation/LoadingAnimation";
 
 export default function TemporaryDrawer({
 	handleLego,
@@ -40,39 +42,52 @@ export default function TemporaryDrawer({
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			<Typography
-				sx={{ display: "flex", justifyContent: "center" }}
-				color="primary"
-				variant="h3"
+				sx={{
+					display: "flex",
+					justifyContent: "center",
+					textTransform: "uppercase",
+					background: "#02a676",
+				}}
+				color="white"
+				variant="h4"
 			>
-				Categories
+				Option
 			</Typography>
 			{/* <List sx={{ display: "flex", flexDirection: "column" }}> */}
-			<Stack direction="column" spacing={2}>
-				<Button variant="outlined" onClick={handleLego}>
+			<Stack direction="column" spacing={0}>
+				<Divider />
+				<StyledButton variant="text" onClick={handleLego}>
 					Lego
-				</Button>
-				<Button variant="outlined" onClick={handlePlaymobil}>
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handlePlaymobil}>
 					Playmobil
-				</Button>
-				<Button variant="outlined" onClick={handleWood}>
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleWood}>
 					Wooden Toys
-				</Button>
-				<Button variant="outlined" onClick={handleCars}>
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleCars}>
 					Cars
-				</Button>
-				<Button variant="outlined" onClick={handleOutdoor}>
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleOutdoor}>
 					Outdoor Toys
-				</Button>
-				<Button variant="outlined" onClick={handleOthers}>
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleOthers}>
 					Others
-				</Button>
+				</StyledButton>
+				<Divider />
+				<LoadingAnimation />
 			</Stack>
 		</Box>
 	);
 
 	return (
 		<div>
-			{["top"].map(anchor => (
+			{["left"].map(anchor => (
 				<React.Fragment key={anchor}>
 					{!filteredItems ? (
 						<Button

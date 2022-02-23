@@ -73,7 +73,7 @@ const ItemsCard = ({ item, isMine }) => {
 								</Typography>
 							</Link>
 						}
-						subheader={item.category}
+						// subheader={item.category}
 					/>
 					{item.images ? (
 						<CardMedia

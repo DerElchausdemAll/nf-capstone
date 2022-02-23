@@ -4,7 +4,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export const StyledArrowBackIosNewIcon = styled(ArrowBackIosNewIcon)`
 	position: absolute;
-	z-index: 10;
+	z-index: 1;
 	top: 50%;
 	left: 0.2rem;
 	color: black;
@@ -14,8 +14,8 @@ export const StyledArrowBackIosNewIcon = styled(ArrowBackIosNewIcon)`
 `;
 
 export const StyledImage = styled.img`
-	width: 428px;
-	height: 428px;
+	width: 375px;
+	height: 375px;
 `;
 
 export const StyledSlider = styled.div`
@@ -27,7 +27,7 @@ export const StyledSlider = styled.div`
 
 export const StyledArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
 	position: absolute;
-	z-index: 10;
+	z-index: 1;
 	top: 50%;
 	right: 0.2rem;
 	color: black;
