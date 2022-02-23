@@ -30,15 +30,14 @@ export const StyledText = styled(Typography)`
 	margin-left: 20px;
 	animation: ${move} 0.7s ease-out;
 	font-weight: 800;
-	text-decoration: underline;
 	-webkit-text-decoration: underline;
-	text-decoration-color: #1976d2;
 	-webkit-text-decoration-color: #1976d2;
-	text-decoration-thickness: 7px;
 	-webkit-text-decoration-thickness: 7px;
-	text-decoration-style: solid;
 	-webkit-text-decoration-style: solid;
-
+	text-decoration: underline;
+	text-decoration-color: #1976d2;
+	text-decoration-thickness: 7px;
+	text-decoration-style: solid;
 	text-transform: uppercase;
 `;
 
