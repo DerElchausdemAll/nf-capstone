@@ -12,26 +12,54 @@ import Box from "@mui/material/Box";
 const Items = () => {
 	const itemCards = useStore(state => state.itemCards);
 	console.log(itemCards);
-	const [filter, setFilter] = useState([]);
-	console.log(filter);
-	setFilter(itemCards);
 	const [bookmark, setBookmark] = useState(itemCards);
+	const [filteredItems, setFilteredItems] = useState(null);
 	const { data: session } = useSession();
-
-	// const test = () => {
-	// 	const filterresults = itemCards.filter(item => item.category === "lego");
-	// 	console.log(filterresults);
-	// 	setFilter(filterresults);
-	// };
-
-	const filterresults = itemCards.filter(lego => lego.category === "lego");
-	console.log(filterresults);
-	setFilter(filterresults);
 
 	const handleBookmark = () => {
 		setBookmark(!bookmark);
 	};
 	const favorites = itemCards.filter(card => card.checked === true);
+
+	const handleLego = () => {
+		const legoItems = itemCards.filter(item => item.category === "lego");
+		setFilteredItems(legoItems);
+	};
+
+	const handlePlaymobil = () => {
+		const legoItems = itemCards.filter(item => item.category === "playmobil");
+		setFilteredItems(legoItems);
+	};
+
+	const handleWood = () => {
+		const legoItems = itemCards.filter(item => item.category === "wood");
+		setFilteredItems(legoItems);
+	};
+
+	const handleCars = () => {
+		const legoItems = itemCards.filter(item => item.category === "cars");
+		setFilteredItems(legoItems);
+	};
+
+	const handleOutdoor = () => {
+		const legoItems = itemCards.filter(item => item.category === "outdoor");
+		setFilteredItems(legoItems);
+	};
+
+	const handleOthers = () => {
+		const legoItems = itemCards.filter(item => item.category === "others");
+		setFilteredItems(legoItems);
+	};
+
+	let items = [];
+
+	console.log(filteredItems);
+
+	if (filteredItems) {
+		items = filteredItems;
+	} else {
+		items = itemCards;
+	}
 
 	return (
 		<div>
@@ -44,8 +72,16 @@ const Items = () => {
 					mx: 2,
 				}}
 			>
-				{/* <Button onClick={test}>Huhu</Button> */}
-				<TemporaryDrawer />
+				<TemporaryDrawer
+					handleLego={handleLego}
+					setFilteredItems={setFilteredItems}
+					filteredItems={filteredItems}
+					handlePlaymobil={handlePlaymobil}
+					handleWood={handleWood}
+					handleCars={handleCars}
+					handleOutdoor={handleOutdoor}
+					handleOthers={handleOthers}
+				/>
 
 				<Button
 					variant="contained"
@@ -57,7 +93,7 @@ const Items = () => {
 			</Box>
 			<Container>
 				<Grid container spacing={0.5} sx={{ pb: 2 }}>
-					{(bookmark ? filter : favorites).map(item => (
+					{(bookmark ? items : favorites).map(item => (
 						<Grid item key={item._id} xs={12} sm={6} md={3}>
 							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
 						</Grid>
@@ -69,68 +105,3 @@ const Items = () => {
 };
 
 export default Items;
-
-// const Items = () => {
-// 	let itemCards = useStore(state => state.itemCards);
-// 	console.log(itemCards);
-// 	// const [filter, setFilter] = useState([]);
-// 	// console.log(filter);
-// 	// setFilter(itemCards);
-// 	// const [bookmark, setBookmark] = useState(filter);
-// 	const { data: session } = useSession();
-
-// 	const test = () => {
-// 		itemCards = itemCards.filter(item => item.category === "lego");
-// 		console.log(itemCards);
-// 		get(itemCards)
-// 	};
-
-// 	// useEffect(() => {
-// 	// 	itemCards = filterresults;
-// 	// }, [filterresults]);
-
-// 	// const filterresults = itemCards.filter(lego => lego.category === "lego");
-// 	// console.log(filterresults);
-// 	// setFilter(filterresults);
-
-// 	// const handleBookmark = () => {
-// 	// 	setBookmark(!bookmark);
-// 	// };
-// 	// const favorites = itemCards.filter(card => card.checked === true);
-
-// 	return (
-// 		<div>
-// 			<Box
-// 				sx={{
-// 					display: "flex",
-// 					justifyContent: "space-between",
-// 					mt: 9,
-// 					mb: 2,
-// 					mx: 2,
-// 				}}
-// 			>
-// 				<Button onClick={test}>Huhu</Button>
-// 				<TemporaryDrawer />
-
-// 				<Button
-// 					variant="contained"
-// 					// onClick={handleBookmark}
-// 					style={{ width: FILTER_BUTTON_WIDTH }}
-// 				>
-// 					{/* {!bookmark ? "Show All" : "Favorites"} */}
-// 				</Button>
-// 			</Box>
-// 			<Container>
-// 				<Grid container spacing={0.5} sx={{ pb: 2 }}>
-// 					{itemCards.map(item => (
-// 						<Grid item key={item._id} xs={12} sm={6} md={3}>
-// 							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
-// 						</Grid>
-// 					))}
-// 				</Grid>
-// 			</Container>
-// 		</div>
-// 	);
-// };
-
-// export default Items;

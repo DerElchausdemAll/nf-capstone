@@ -2,12 +2,21 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import { FILTER_BUTTON_WIDTH } from "../../ions/constants";
+import Stack from "@mui/material/Stack";
+import { StyledButton } from "./styled";
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({
+	handleLego,
+	setFilteredItems,
+	filteredItems,
+	handlePlaymobil,
+	handleWood,
+	handleCars,
+	handleOutdoor,
+	handleOthers,
+}) {
 	const [state, setState] = React.useState({
 		top: false,
 		left: false,
@@ -30,20 +39,34 @@ export default function TemporaryDrawer() {
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
-			<Typography variant="h3">Filter</Typography>
-			<List>
-				<Typography variant="h6">Lego</Typography>
-				<Typography variant="h6">Wooden Toys</Typography>
-				<Typography variant="h6">Playmobil</Typography>
-				<Typography variant="h6">Outdoor</Typography>
-				<Typography variant="h6">Cars</Typography>
-				<Typography variant="h6">Lego</Typography>
-				<Typography variant="h6">Others</Typography>
-			</List>
-			<Divider />
-			<List>
-				<Typography variant="h6">Radius</Typography>
-			</List>
+			<Typography
+				sx={{ display: "flex", justifyContent: "center" }}
+				color="primary"
+				variant="h3"
+			>
+				Categories
+			</Typography>
+			{/* <List sx={{ display: "flex", flexDirection: "column" }}> */}
+			<Stack direction="column" spacing={2}>
+				<Button variant="outlined" onClick={handleLego}>
+					Lego
+				</Button>
+				<Button variant="outlined" onClick={handlePlaymobil}>
+					Playmobil
+				</Button>
+				<Button variant="outlined" onClick={handleWood}>
+					Wooden Toys
+				</Button>
+				<Button variant="outlined" onClick={handleCars}>
+					Cars
+				</Button>
+				<Button variant="outlined" onClick={handleOutdoor}>
+					Outdoor Toys
+				</Button>
+				<Button variant="outlined" onClick={handleOthers}>
+					Others
+				</Button>
+			</Stack>
 		</Box>
 	);
 
@@ -51,13 +74,25 @@ export default function TemporaryDrawer() {
 		<div>
 			{["top"].map(anchor => (
 				<React.Fragment key={anchor}>
-					<Button
-						variant="contained"
-						style={{ width: FILTER_BUTTON_WIDTH }}
-						onClick={toggleDrawer(anchor, true)}
-					>
-						Filter
-					</Button>
+					{!filteredItems ? (
+						<Button
+							variant="contained"
+							onClick={toggleDrawer(anchor, true)}
+							style={{ width: FILTER_BUTTON_WIDTH }}
+						>
+							Filter
+						</Button>
+					) : (
+						<Button
+							variant="contained"
+							onClick={() => {
+								setFilteredItems(null);
+							}}
+							style={{ width: FILTER_BUTTON_WIDTH }}
+						>
+							Show All
+						</Button>
+					)}
 					<Drawer
 						anchor={anchor}
 						open={state[anchor]}
