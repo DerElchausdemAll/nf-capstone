@@ -119,7 +119,7 @@ const Profile = () => {
 							</Grid>
 						</Container>
 					) : (
-						<Typography variant="h6"></Typography>
+						<Typography variant="h6" />
 					)}
 				</Box>
 			</Layout>

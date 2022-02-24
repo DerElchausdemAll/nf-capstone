@@ -9,7 +9,6 @@ import Item from "../../ions/models/item.model";
 import ImageSlider from "../../molecules/imageslider/ImageSlider";
 import Container from "@mui/material/Container";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import Popover from "@mui/material/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
