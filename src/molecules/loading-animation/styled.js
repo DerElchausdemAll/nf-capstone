@@ -39,8 +39,6 @@ export const StyledBall = styled.div`
 	border-radius: 50%;
 	background: white;
 
-	/* ${spinning} */
-
 	&::after {
 		content: "";
 		position: absolute;
@@ -61,6 +59,6 @@ export const StyledBall = styled.div`
 		width: 36px;
 		height: 36px;
 		margin: 10px;
-		background: #c00000;
+		background: #1976d2;
 	}
 `;

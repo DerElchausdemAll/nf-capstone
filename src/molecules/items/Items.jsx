@@ -51,15 +51,15 @@ const Items = () => {
 		setFilteredItems(legoItems);
 	};
 
-	let items = [];
+	const items = filteredItems ?? itemCards;
 
-	console.log(filteredItems);
+	console.log(items);
 
-	if (filteredItems) {
-		items = filteredItems;
-	} else {
-		items = itemCards;
-	}
+	// if (filteredItems?) {
+	// 	items = filteredItems.reverse();
+	// } else {
+	// 	items = itemCards.reverse();
+	// }
 
 	return (
 		<div>
@@ -93,7 +93,7 @@ const Items = () => {
 			</Box>
 			<Container>
 				<Grid container spacing={0.5} sx={{ pb: 2 }}>
-					{(bookmark ? items : favorites).map(item => (
+					{(bookmark ? items : favorites).reverse().map(item => (
 						<Grid item key={item._id} xs={12} sm={6} md={3}>
 							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
 						</Grid>

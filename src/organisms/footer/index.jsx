@@ -13,7 +13,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<BottomNavigation />
-			<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
+			<Paper sx={{ position: "fixed", zIndex: "1000", bottom: 0, left: 0, right: 0 }}>
 				<BottomNavigation sx={{ background: "#02A676" }}>
 					<BottomNavigationAction
 						label="Home"

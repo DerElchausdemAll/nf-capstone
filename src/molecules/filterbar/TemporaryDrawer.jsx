@@ -7,7 +7,7 @@ import { FILTER_BUTTON_WIDTH } from "../../ions/constants";
 import Stack from "@mui/material/Stack";
 import { StyledButton } from "./styled";
 import Divider from "@mui/material/Divider";
-import LoadingAnimation from "../loading-animation/LoadingAnimation";
+// import LoadingAnimation from "../loading-animation/LoadingAnimation";
 
 export default function TemporaryDrawer({
 	handleLego,
@@ -51,7 +51,7 @@ export default function TemporaryDrawer({
 				color="white"
 				variant="h4"
 			>
-				Option
+				Options
 			</Typography>
 			{/* <List sx={{ display: "flex", flexDirection: "column" }}> */}
 			<Stack direction="column" spacing={0}>
@@ -80,7 +80,10 @@ export default function TemporaryDrawer({
 					Others
 				</StyledButton>
 				<Divider />
-				<LoadingAnimation />
+				{/* <br />
+				<br />
+				<br />
+				<LoadingAnimation /> */}
 			</Stack>
 		</Box>
 	);

@@ -14,7 +14,7 @@ export const StyledArrowBackIosNewIcon = styled(ArrowBackIosNewIcon)`
 `;
 
 export const StyledImage = styled.img`
-	width: 375px;
+	width: 350px;
 	height: 375px;
 `;
 
