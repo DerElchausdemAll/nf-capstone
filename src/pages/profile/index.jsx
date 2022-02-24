@@ -11,8 +11,7 @@ import Typography from "@mui/material/Typography";
 import { StyledImage } from "../../atoms/styled-image/styled";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
-import Paper from "@mui/material/Paper";
-// import Stack from "@mui/material/Stack";
+
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import styled from "@emotion/styled";
