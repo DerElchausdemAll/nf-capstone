@@ -7,15 +7,11 @@ import Typography from "@mui/material/Typography";
 import dbConnect from "../../ions/database/index";
 import Item from "../../ions/models/item.model";
 import ImageSlider from "../../molecules/imageslider/ImageSlider";
+import Container from "@mui/material/Container";
 // import axios from "axios";
 
 const Details = ({ item }) => {
 	console.log(item);
-
-	// sda
-	// get userid from item
-	// find userby userid
-	// change email to users email
 
 	return (
 		<Layout>
@@ -23,32 +19,20 @@ const Details = ({ item }) => {
 				<title key="title">About</title>
 				<meta key="description" name="description" content="About" />
 			</Head>
-			<div
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "space-between",
-				}}
-			>
-				<Typography variant="h2" color="primary" sx={{ paddingBottom: "2rem" }}>
+			<Container>
+				<Typography variant="h2" color="primary" sx={{ paddingBottom: "1rem" }}>
 					{item.title}
 				</Typography>
 				<ImageSlider images={item.images} />
 
-				<Typography
-					sx={{ paddingTop: "2rem", paddingBottom: "1rem" }}
-					color="primary"
-					variant="h4"
-				>
+				<Typography color="primary" variant="h4">
 					Description
 				</Typography>
-				<Typography variant="h6" color="black" sx={{ paddingBottom: "2rem" }}>
+				<Typography variant="h6" color="black" sx={{ paddingBottom: "1rem" }}>
 					{item.details}
 				</Typography>
-				<br />
-				<br />
+
 				<Typography variant="h5">Contact</Typography>
-				<br />
 				<br />
 				{/* funktioniert leider noch nicht */}
 				<form
@@ -87,7 +71,7 @@ const Details = ({ item }) => {
 						Send
 					</Button>
 				</form>
-			</div>
+			</Container>
 		</Layout>
 	);
 };

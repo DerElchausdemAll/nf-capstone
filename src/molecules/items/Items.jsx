@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import ItemsCard from "../../organisms/card/Card";
@@ -13,12 +13,53 @@ const Items = () => {
 	const itemCards = useStore(state => state.itemCards);
 	console.log(itemCards);
 	const [bookmark, setBookmark] = useState(itemCards);
+	const [filteredItems, setFilteredItems] = useState(null);
 	const { data: session } = useSession();
 
 	const handleBookmark = () => {
 		setBookmark(!bookmark);
 	};
 	const favorites = itemCards.filter(card => card.checked === true);
+
+	const handleLego = () => {
+		const legoItems = itemCards.filter(item => item.category === "lego");
+		setFilteredItems(legoItems);
+	};
+
+	const handlePlaymobil = () => {
+		const legoItems = itemCards.filter(item => item.category === "playmobil");
+		setFilteredItems(legoItems);
+	};
+
+	const handleWood = () => {
+		const legoItems = itemCards.filter(item => item.category === "wood");
+		setFilteredItems(legoItems);
+	};
+
+	const handleCars = () => {
+		const legoItems = itemCards.filter(item => item.category === "cars");
+		setFilteredItems(legoItems);
+	};
+
+	const handleOutdoor = () => {
+		const legoItems = itemCards.filter(item => item.category === "outdoor");
+		setFilteredItems(legoItems);
+	};
+
+	const handleOthers = () => {
+		const legoItems = itemCards.filter(item => item.category === "others");
+		setFilteredItems(legoItems);
+	};
+
+	let items = [];
+
+	console.log(filteredItems);
+
+	if (filteredItems) {
+		items = filteredItems;
+	} else {
+		items = itemCards;
+	}
 
 	return (
 		<div>
@@ -31,7 +72,16 @@ const Items = () => {
 					mx: 2,
 				}}
 			>
-				<TemporaryDrawer />
+				<TemporaryDrawer
+					handleLego={handleLego}
+					setFilteredItems={setFilteredItems}
+					filteredItems={filteredItems}
+					handlePlaymobil={handlePlaymobil}
+					handleWood={handleWood}
+					handleCars={handleCars}
+					handleOutdoor={handleOutdoor}
+					handleOthers={handleOthers}
+				/>
 
 				<Button
 					variant="contained"
@@ -43,7 +93,7 @@ const Items = () => {
 			</Box>
 			<Container>
 				<Grid container spacing={0.5} sx={{ pb: 2 }}>
-					{(bookmark ? itemCards : favorites).map(item => (
+					{(bookmark ? items : favorites).map(item => (
 						<Grid item key={item._id} xs={12} sm={6} md={3}>
 							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
 						</Grid>
@@ -55,21 +105,3 @@ const Items = () => {
 };
 
 export default Items;
-
-// const handleFilter = () => {
-// 	const outdoor = itemCards.filter(card => card.category === "outdoor");
-// 	// const playmobil = itemCards.filter(card => card.category === "playmobil");
-// 	// const wood = itemCards.filter(card => card.category === "wood");
-// 	// const cars = itemCards.filter(card => card.category === "cars");
-// 	// const others = itemCards.filter(card => card.category === "other");
-
-// 	if (handleTest === outdoor) {
-// 		itemCards === outdoor;
-// 	}
-// };
-
-// const handleTest = favorites => {
-// 	const lego = itemCards.filter(card => card.category === "lego");
-// 	console.log(lego);
-// 	favorites = lego;
-// };

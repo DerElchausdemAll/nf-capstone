@@ -2,12 +2,23 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import { FILTER_BUTTON_WIDTH } from "../../ions/constants";
+import Stack from "@mui/material/Stack";
+import { StyledButton } from "./styled";
+import Divider from "@mui/material/Divider";
+import LoadingAnimation from "../loading-animation/LoadingAnimation";
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({
+	handleLego,
+	setFilteredItems,
+	filteredItems,
+	handlePlaymobil,
+	handleWood,
+	handleCars,
+	handleOutdoor,
+	handleOthers,
+}) {
 	const [state, setState] = React.useState({
 		top: false,
 		left: false,
@@ -30,34 +41,73 @@ export default function TemporaryDrawer() {
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
-			<Typography variant="h3">Filter</Typography>
-			<List>
-				<Typography variant="h6">Lego</Typography>
-				<Typography variant="h6">Wooden Toys</Typography>
-				<Typography variant="h6">Playmobil</Typography>
-				<Typography variant="h6">Outdoor</Typography>
-				<Typography variant="h6">Cars</Typography>
-				<Typography variant="h6">Lego</Typography>
-				<Typography variant="h6">Others</Typography>
-			</List>
-			<Divider />
-			<List>
-				<Typography variant="h6">Radius</Typography>
-			</List>
+			<Typography
+				sx={{
+					display: "flex",
+					justifyContent: "center",
+					textTransform: "uppercase",
+					background: "#02a676",
+				}}
+				color="white"
+				variant="h4"
+			>
+				Option
+			</Typography>
+			{/* <List sx={{ display: "flex", flexDirection: "column" }}> */}
+			<Stack direction="column" spacing={0}>
+				<Divider />
+				<StyledButton variant="text" onClick={handleLego}>
+					Lego
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handlePlaymobil}>
+					Playmobil
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleWood}>
+					Wooden Toys
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleCars}>
+					Cars
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleOutdoor}>
+					Outdoor Toys
+				</StyledButton>
+				<Divider />
+				<StyledButton variant="text" onClick={handleOthers}>
+					Others
+				</StyledButton>
+				<Divider />
+				<LoadingAnimation />
+			</Stack>
 		</Box>
 	);
 
 	return (
 		<div>
-			{["top"].map(anchor => (
+			{["left"].map(anchor => (
 				<React.Fragment key={anchor}>
-					<Button
-						variant="contained"
-						style={{ width: FILTER_BUTTON_WIDTH }}
-						onClick={toggleDrawer(anchor, true)}
-					>
-						Filter
-					</Button>
+					{!filteredItems ? (
+						<Button
+							variant="contained"
+							onClick={toggleDrawer(anchor, true)}
+							style={{ width: FILTER_BUTTON_WIDTH }}
+						>
+							Filter
+						</Button>
+					) : (
+						<Button
+							variant="contained"
+							onClick={() => {
+								setFilteredItems(null);
+							}}
+							style={{ width: FILTER_BUTTON_WIDTH }}
+						>
+							Show All
+						</Button>
+					)}
 					<Drawer
 						anchor={anchor}
 						open={state[anchor]}
