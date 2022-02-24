@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import styled from "@emotion/styled";
+import Typography from "@mui/material/Typography";
 // import { Typography } from "@mui/material";
 
 const ImageUploader = () => {
@@ -51,6 +52,9 @@ const ImageUploader = () => {
 			</Head>
 			<div>
 				<Stack spacing={2}>
+					<Typography variant="h6" color="primary">
+						Number of selected images: {imageSelected.length}{" "}
+					</Typography>
 					<label
 						htmlFor="icon-button-file"
 						style={{ display: "flex", justifyContent: "center" }}

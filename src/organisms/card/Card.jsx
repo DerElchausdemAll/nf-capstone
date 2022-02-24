@@ -15,6 +15,7 @@ import useStore from "../../ions/hooks/storeFormData";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
 import Box from "@mui/material/Box";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const ExpandMore = styled(props => {
 	const { expand, ...other } = props;
@@ -46,68 +47,81 @@ const ItemsCard = ({ item, isMine }) => {
 		setExpanded(!expanded);
 	};
 
-	return (
-		<div>
-			<Box sx={{ boxShadow: 3 }}>
-				<Card sx={{ background: "#FDFAFD" }}>
-					<CardHeader
-						action={
-							<Checkbox
-								checked={item.checked}
-								color="error"
-								onChange={handleChange}
-								inputProps={{ "aria-label": "controlled" }}
-								{...label}
-								icon={<FavoriteBorder />}
-								checkedIcon={<Favorite />}
-							/>
-						}
-						title={
-							<Link key={item._id} href={"/details/" + item._id}>
-								<Typography
-									variant="h4"
-									color="primary"
-									sx={{ cursor: "pointer", userSelect: "none" }}
-								>
-									{item.title}
-								</Typography>
-							</Link>
-						}
-						// subheader={item.category}
-					/>
-					{item.images ? (
-						<CardMedia
-							sx={{ padding: "0.5rem" }}
-							component="img"
-							height="194"
-							image={item.images[0]}
-							alt={item.title}
-						/>
-					) : null}
+	const theme = createTheme({
+		palette: {
+			primary: {
+				main: "#1976d2",
+			},
+			secondary: {
+				main: "#ff831a",
+			},
+		},
+	});
 
-					<CardActions disableSpacing>
-						{isMine && <DeleteIcon color="primary" onClick={handleDelete} />}
-						<ExpandMore
-							expand={expanded}
-							onClick={handleExpandClick}
-							aria-expanded={expanded}
-							aria-label="show more"
-						>
-							<ExpandMoreIcon />
-						</ExpandMore>
-					</CardActions>
-					<Collapse in={expanded} timeout="auto" unmountOnExit>
-						<CardContent>
-							<Typography variant="body1">Description:</Typography>
-							<br />
-							<Typography variant="body2" color="primary">
-								{item.details}
-							</Typography>
-						</CardContent>
-					</Collapse>
-				</Card>
-			</Box>
-		</div>
+	return (
+		<ThemeProvider theme={theme}>
+			<div>
+				<Box sx={{ boxShadow: 3 }}>
+					<Card sx={{ background: "#FDFAFD" }}>
+						<CardHeader
+							action={
+								<Checkbox
+									checked={item.checked}
+									color="secondary"
+									onChange={handleChange}
+									inputProps={{ "aria-label": "controlled" }}
+									{...label}
+									icon={<FavoriteBorder />}
+									checkedIcon={<Favorite />}
+								/>
+							}
+							title={
+								<Link key={item._id} href={"/details/" + item._id}>
+									<Typography
+										variant="h4"
+										color="primary"
+										sx={{ cursor: "pointer", userSelect: "none" }}
+									>
+										{item.title}
+									</Typography>
+								</Link>
+							}
+							// subheader={item.category}
+						/>
+						{item.images ? (
+							<CardMedia
+								sx={{ padding: "0.5rem" }}
+								component="img"
+								height="194"
+								image={item.images[0]}
+								alt={item.title}
+							/>
+						) : null}
+
+						<CardActions disableSpacing>
+							{isMine && <DeleteIcon color="primary" onClick={handleDelete} />}
+							<ExpandMore
+								expand={expanded}
+								onClick={handleExpandClick}
+								aria-expanded={expanded}
+								aria-label="show more"
+							>
+								<ExpandMoreIcon />
+							</ExpandMore>
+						</CardActions>
+						<Collapse in={expanded} timeout="auto" unmountOnExit>
+							<CardContent>
+								<Typography variant="body1">Description:</Typography>
+								<br />
+								<Typography variant="body2" color="primary">
+									{item.details}
+								</Typography>
+							</CardContent>
+						</Collapse>
+					</Card>
+				</Box>
+			</div>
+		</ThemeProvider>
 	);
 };
 
