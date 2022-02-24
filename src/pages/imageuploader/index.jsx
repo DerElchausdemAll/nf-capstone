@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import styled from "@emotion/styled";
-import { Typography } from "@mui/material";
+// import { Typography } from "@mui/material";
 
 const ImageUploader = () => {
 	const [imageSelected, setImageSelected] = useState([]);

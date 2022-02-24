@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import { StyledImage } from "../../atoms/styled-image/styled";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
-import Stack from "@mui/material/Stack";
+// import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import styled from "@emotion/styled";
@@ -68,9 +68,6 @@ const Profile = () => {
 									accept="image/*"
 									id="icon-button-file"
 									type="file"
-									onChange={event => {
-										setImageSelected(event.target.files);
-									}}
 								/>
 								<IconButton
 									color="primary"
