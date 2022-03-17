@@ -93,7 +93,7 @@ const Items = () => {
 			</Box>
 			<Container>
 				<Grid container spacing={0.5} sx={{ pb: 2 }}>
-					{(bookmark ? items : favorites).reverse().map(item => (
+					{(bookmark ? items : favorites).map(item => (
 						<Grid item key={item._id} xs={12} sm={6} md={3}>
 							<ItemsCard item={item} isMine={item.userId === session?.user.id} />
 						</Grid>
@@ -105,3 +105,5 @@ const Items = () => {
 };
 
 export default Items;
+
+// .reverse().map(item...)
